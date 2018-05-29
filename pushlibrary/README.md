@@ -25,21 +25,7 @@ defaultConfig{
 初始化：
 
 ```
-    private void initPush() {
-        XGPushConfig.enableDebug(this, BuildConfig.LOG_DEBUG);
-        XGPushManager.registerPush(this, new XGIOperateCallback() {
-            @Override
-            public void onSuccess(Object data, int flag) {
-                //token在设备卸载重装的时候有可能会变
-                LoggerUtils.d(AppConstants.Tag.PUSH, "注册成功，设备token为：" + data);
-            }
-
-            @Override
-            public void onFail(Object data, int errCode, String msg) {
-                LoggerUtils.d(AppConstants.Tag.PUSH, "注册失败，错误码：" + errCode + ",错误信息：" + msg);
-            }
-        });
-    }
+PushUtils.register(context)
 ```
 
 # 问题记录

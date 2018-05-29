@@ -14,6 +14,10 @@ import com.tencent.android.tpush.XGPushManager;
  */
 public class PushUtils {
 
+    public static void register(Context context) {
+        register(context, "");
+    }
+
     public static void register(Context context, String account) {
         // 华为推送渠道 Debug 模式
 //        XGPushConfig.setHuaweiDebug(true);
