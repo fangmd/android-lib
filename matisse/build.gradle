@@ -32,7 +32,7 @@ android {
     }
 }
 
-ext.supportLibVersion = '24.2.1'
+ext.supportLibVersion = '27.1.1'
 
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
@@ -47,7 +47,7 @@ dependencies {
         exclude module: 'rxjava'
         exclude module: 'support-annotations'
     }
-    api 'io.reactivex.rxjava2:rxjava:2.1.1'
+    api 'io.reactivex.rxjava2:rxjava:2.1.9'
     api('io.reactivex.rxjava2:rxandroid:2.0.1') {
         exclude module: 'rxjava'
     }
