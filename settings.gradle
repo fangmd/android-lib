@@ -1,2 +1,8 @@
-include ':app', ':creashlib', 'pushlibrary',
-'imagelib'//, 'matisse'
+include ':app',
+        ':opensourcelib',
+        ':creashlib',
+        ':pushlib',
+        ':matisse',
+        ':imagelib'
+
+

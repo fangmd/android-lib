@@ -28,6 +28,9 @@ pushlib
 
 介绍：Fabric 崩溃收集
 
+# OpenSourceLib
+
+介绍：存放不需要封装的公共第三方库
 
 
 # 图片视频选择库 (1d)
