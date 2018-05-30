@@ -1,1 +1,1 @@
-include ':app', ':crashcollection', 'pushlibrary'
+include ':app', ':crashcollection', 'pushlibrary', 'matisse'

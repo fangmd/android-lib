@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:id="@+id/fl_image_select_root"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+    <View
+        android:layout_width="match_parent"
+        android:background="#eeeeee"
+        android:layout_margin="15dp"
+        android:layout_height="match_parent"/>
+
+    <ImageView
+        android:id="@+id/iv_image_select_show"
+        android:layout_margin="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <LinearLayout
+        android:id="@+id/ll_image_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_image_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/zrx_add_img_ic"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="添加"
+            android:textColor="#999999"
+            android:textSize="13sp"/>
+
+    </LinearLayout>
+
+    <com.zhihu.matisse.zrx.uploadprogress.UploadProgressView
+        android:id="@+id/upload_progress_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="15dp"
+        android:visibility="gone"
+        app:upload_progress_view_text_size="13sp"/>
+
+    <ImageView
+        android:id="@+id/iv_image_select_delete"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_gravity="right|end"
+        android:padding="5dp"
+        android:src="@drawable/zrx_delete_ic"
+        android:visibility="gone"/>
+
+</FrameLayout>
