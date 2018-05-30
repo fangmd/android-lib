@@ -1,2 +1,2 @@
-include ':app', ':crashcollection', 'pushlibrary',
+include ':app', ':creashlib', 'pushlibrary',
 'imagelib'//, 'matisse'

@@ -1,0 +1,17 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.lhjx.crashcollection">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+
+    <application>
+
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="d0df73d15725d3055fc73c199f8c056f1c239f92" />
+
+
+    </application>
+
+</manifest>
