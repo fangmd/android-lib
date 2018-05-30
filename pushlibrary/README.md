@@ -25,7 +25,11 @@ defaultConfig{
 初始化：
 
 ```
-PushUtils.register(context)
+# 不设置账号
+PushUtils.register(context);
+
+# 设置账号
+PushUtils.register(context, account);
 ```
 
 # 问题记录
@@ -35,6 +39,7 @@ PushUtils.register(context)
 
 
 # Proguard
+
 
 ```
 # xg
