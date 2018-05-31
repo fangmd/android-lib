@@ -5,16 +5,9 @@
 2. `README.md` 文件需要包含以下内容：Module 介绍，使用和集成方法，已知 bug ，历史更新记录，proguard rule
 3. 主工程中写测试代码
 4. 命名规则：moduleName + lib
+5. 包名：lhjx
 
 >下面列举了最近工作涉及到的库，其他的大家可以补充
-
-包名：lhjx
-
-lib 命名规则：
-
-crashlib
-pushlib
-
 
 
 # PushLibrary
@@ -27,6 +20,8 @@ pushlib
 # CrashCollection (1d)
 
 介绍：Fabric 崩溃收集
+
+>Fabric 库下载失败 read timed out
 
 # OpenSourceLib
 
@@ -43,7 +38,7 @@ pushlib
 
 # 图片加载库 (1d)
 
-
+介绍：基于 glide 的图片加载库
 
 
 # 分享库
@@ -53,7 +48,7 @@ pushlib
 # 网络库 (2d)
 
 
-# 统计库
+# 统计库 AnalysisLib
 
 umeng 统计
 

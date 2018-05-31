@@ -1,4 +1,4 @@
-include ':app',
+include ':app', ':analysislib',
         ':opensourcelib',
         ':creashlib',
         ':pushlib',
