@@ -23,12 +23,10 @@ import com.lhjx.imagelib.progress.ProgressListener;
 
 /**
  * 图片加载管理类
- * <p>
  * Context: 如果是activity glide会与其生命周期关联,在onStop()中取消加载图片,如果
  * 想要始终加载图片则需要传入Application实例
  * Created by double on 2018/4/7.
  */
-
 public class ImageManager {
 
     private static final String TAG = ImageManager.class.getSimpleName();

@@ -93,27 +93,6 @@ public class ZRXAlbumMediaAdapter extends
     protected void onBindViewHolder(final RecyclerView.ViewHolder holder, Cursor cursor) {
         if (holder instanceof CaptureViewHolder) {
             CaptureViewHolder captureViewHolder = (CaptureViewHolder) holder;
-//            Drawable[] drawables = captureViewHolder.mHint.getCompoundDrawables();
-//            TypedArray ta = holder.itemView.getContext().getTheme().obtainStyledAttributes(
-//                    new int[]{R.attr.capture_textColor});
-//            int color = ta.getColor(0, 0);
-//            ta.recycle();
-//
-//            for (int i = 0; i < drawables.length; i++) {
-//                Drawable drawable = drawables[i];
-//                if (drawable != null) {
-//                    final Drawable.ConstantState state = drawable.getConstantState();
-//                    if (state == null) {
-//                        continue;
-//                    }
-//
-//                    Drawable newDrawable = state.newDrawable().mutate();
-//                    newDrawable.setColorFilter(color, PorterDuff.Mode.SRC_IN);
-//                    newDrawable.setBounds(drawable.getBounds());
-//                    drawables[i] = newDrawable;
-//                }
-//            }
-//            captureViewHolder.mHint.setCompoundDrawables(drawables[0], drawables[1], drawables[2], drawables[3]);
         } else if (holder instanceof MediaViewHolder) {
             MediaViewHolder mediaViewHolder = (MediaViewHolder) holder;
 
@@ -296,12 +275,8 @@ public class ZRXAlbumMediaAdapter extends
 
     private static class CaptureViewHolder extends RecyclerView.ViewHolder {
 
-//        private TextView mHint;
-
         CaptureViewHolder(View itemView) {
             super(itemView);
-
-//            mHint = (TextView) itemView.findViewById(R.id.hint);
         }
     }
 

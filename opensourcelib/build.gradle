@@ -31,23 +31,23 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     //android
-    implementation 'com.android.support:appcompat-v7:27.1.1'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
-    implementation 'com.android.support:design:27.1.1'
+    api 'com.android.support:appcompat-v7:27.1.1'
+    api 'com.android.support.constraint:constraint-layout:1.1.0'
+    api 'com.android.support:design:27.1.1'
     //rx
-    implementation 'io.reactivex.rxjava2:rxjava:2.1.9'
-    implementation('io.reactivex.rxjava2:rxandroid:2.0.2') {
+    api 'io.reactivex.rxjava2:rxjava:2.1.9'
+    api('io.reactivex.rxjava2:rxandroid:2.0.2') {
         exclude module: 'rxjava'
     }
-    implementation('com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar') {
+    api('com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar') {
         exclude module: 'rxjava'
         exclude module: 'support-annotations'
     }
-    implementation('com.trello.rxlifecycle2:rxlifecycle:2.2.1') {
+    api('com.trello.rxlifecycle2:rxlifecycle:2.2.1') {
         exclude module: 'rxjava'
         exclude module: 'jsr305'
     }
-    implementation('com.trello.rxlifecycle2:rxlifecycle-components:2.2.1') {
+    api('com.trello.rxlifecycle2:rxlifecycle-components:2.2.1') {
         exclude module: 'support-v4'
         exclude module: 'appcompat-v7'
         exclude module: 'support-annotations'
@@ -56,28 +56,28 @@ dependencies {
         exclude module: 'rxlifecycle'
     }
     //net
-    implementation('com.squareup.retrofit2:retrofit:2.4.0') {
+    api('com.squareup.retrofit2:retrofit:2.4.0') {
         exclude module: 'okhttp'
         exclude module: 'okio'
     }
-    implementation('com.squareup.retrofit2:converter-gson:2.3.0') {
+    api('com.squareup.retrofit2:converter-gson:2.3.0') {
         exclude module: 'retrofit'
         exclude module: 'okhttp'
         exclude module: 'okio'
     }
-    implementation('com.squareup.retrofit2:adapter-rxjava2:2.3.0') {
+    api('com.squareup.retrofit2:adapter-rxjava2:2.3.0') {
         exclude module: 'rxjava'
         exclude module: 'okhttp'
         exclude module: 'retrofit'
         exclude module: 'okio'
     }
-    implementation('com.squareup.okhttp3:logging-interceptor:3.9.0') {
+    api('com.squareup.okhttp3:logging-interceptor:3.9.0') {
         exclude module: 'okhttp'
     }
-    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    api 'com.squareup.okhttp3:okhttp:3.10.0'
     // logger
-    implementation 'com.orhanobut:logger:2.2.0'
+    api 'com.orhanobut:logger:2.2.0'
     //refresh
-    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.5.1'
-    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.5.1'
+    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.5.1'
+    api 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.5.1'
 }

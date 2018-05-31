@@ -27,7 +27,6 @@ import android.os.Handler;
 import android.os.Looper;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.FileProvider;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -38,13 +37,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.aliyun.common.utils.StorageUtils;
-import com.aliyun.demo.recorder.AliyunVideoRecorder;
-import com.aliyun.struct.common.ScaleMode;
-import com.aliyun.struct.common.VideoQuality;
-import com.aliyun.struct.recorder.CameraType;
-import com.aliyun.struct.recorder.FlashType;
-import com.aliyun.struct.snap.AliyunSnapVideoParam;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.zhihu.matisse.R;
 import com.zhihu.matisse.SelectorUtils;
@@ -64,13 +56,9 @@ import com.zhihu.matisse.internal.ui.widget.ZRXAlbumsSpinner;
 import com.zhihu.matisse.internal.utils.MediaStoreCompat;
 import com.zhihu.matisse.internal.utils.PathUtils;
 import com.zhihu.matisse.internal.utils.StatusBarHelper;
-import com.zrx.video.util.Utils;
 
-import java.io.File;
 import java.util.ArrayList;
 
-import io.reactivex.annotations.NonNull;
-import io.reactivex.functions.Consumer;
 
 /**
  * Main Activity to display albums and media content (images/videos) in each album
@@ -240,30 +228,6 @@ public class ZRXMatisseActivity extends AppCompatActivity implements
                 ZRXMatisseActivity.this.revokeUriPermission(contentUri,
                         Intent.FLAG_GRANT_WRITE_URI_PERMISSION | Intent.FLAG_GRANT_READ_URI_PERMISSION);
             finish();
-        } else if (requestCode == 2000) {
-            String filePath = data.getStringExtra(AliyunVideoRecorder.OUTPUT_PATH);
-            ArrayList<Uri> selected = new ArrayList<>();
-
-            if (mSpec.onlyShowVideos() && !SelectorUtils.isFileSizeOk(filePath)) {
-                // video, video > 50M
-                Toast.makeText(this, "视频不能超过50M", Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            File file = new File(filePath);
-            Uri videoUri = FileProvider.getUriForFile(ZRXMatisseActivity.this,
-                    mSpec.captureStrategy.authority, file);
-            selected.add(videoUri);
-            ArrayList<String> selectedPath = new ArrayList<>();
-            selectedPath.add(filePath);
-            Intent result = new Intent();
-            result.putParcelableArrayListExtra(EXTRA_RESULT_SELECTION, selected);
-            result.putStringArrayListExtra(EXTRA_RESULT_SELECTION_PATH, selectedPath);
-            setResult(RESULT_OK, result);
-            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP)
-                ZRXMatisseActivity.this.revokeUriPermission(videoUri,
-                        Intent.FLAG_GRANT_WRITE_URI_PERMISSION | Intent.FLAG_GRANT_READ_URI_PERMISSION);
-            finish();
         } else if (requestCode == REQUEST_CODE_GET_PHOTO_FROM_ALBUM) {
             // 从系统相册中获取图片/视频
             if (data != null) {
@@ -415,30 +379,13 @@ public class ZRXMatisseActivity extends AppCompatActivity implements
         return mSelectedCollection;
     }
 
-    //video
-    private static final String[] PERMISSIONS = new String[]{
-            Manifest.permission.CAMERA,
-            Manifest.permission.RECORD_AUDIO,
-            Manifest.permission.READ_EXTERNAL_STORAGE,
-            Manifest.permission.WRITE_EXTERNAL_STORAGE};
-
-    /**
-     * 录制参数
-     */
-    private AliyunSnapVideoParam mRecordParam;
-
     @SuppressLint("CheckResult")
     @Override
     public void capture() {
-        if (mSpec.onlyShowVideos()) {
-            getVideo();
-            return;
-        }
-
         new RxPermissions(this).request(Manifest.permission.CAMERA)
-                .subscribe(new Consumer<Boolean>() {
+                .subscribe(new io.reactivex.functions.Consumer<Boolean>() {
                     @Override
-                    public void accept(@NonNull Boolean aBoolean) throws Exception {
+                    public void accept(Boolean aBoolean) throws Exception {
                         if (aBoolean) {
                             if (mMediaStoreCompat != null) {
                                 mMediaStoreCompat.dispatchCaptureIntent(ZRXMatisseActivity.this, REQUEST_CODE_CAPTURE);
@@ -450,49 +397,4 @@ public class ZRXMatisseActivity extends AppCompatActivity implements
                 });
     }
 
-    @SuppressLint("CheckResult")
-    private void getVideo() {
-        new RxPermissions(this).request(PERMISSIONS)
-                .subscribe(new Consumer<Boolean>() {
-                    @Override
-                    public void accept(Boolean aBoolean) throws Exception {
-                        if (aBoolean) {
-                            String path = StorageUtils.getCacheDirectory(ZRXMatisseActivity.this).getAbsolutePath() + File.separator + Utils.QU_NAME + File.separator;
-                            File filter = new File(new File(path), "filter");
-                            String[] list = filter.list();
-                            if (list == null) {
-                                list = new String[]{""};
-                            }
-                            String[] eff_dirs = new String[list.length + 1];
-                            eff_dirs[0] = null;
-                            for (int i = 0; i < list.length; i++) {
-                                eff_dirs[i + 1] = filter.getPath() + "/" + list[i];
-                            }
-                            mRecordParam = new AliyunSnapVideoParam.Builder()
-                                    .setResulutionMode(AliyunSnapVideoParam.RESOLUTION_540P)  //设置录制分辨率
-                                    .setRatioMode(AliyunSnapVideoParam.RATIO_MODE_9_16)      //设置视频比例
-                                    .setRecordMode(AliyunSnapVideoParam.RECORD_MODE_TOUCH)    //设置点击录制模式
-                                    .setFilterList(eff_dirs)   //设置滤镜地址列表
-                                    .setBeautyLevel(0)   //设置美颜度
-                                    .setBeautyStatus(false)  //设置美颜开关  true:打开   false:关闭
-                                    .setCameraType(CameraType.BACK) // 默认为后置摄像头
-                                    .setFlashType(FlashType.OFF)    //设置闪关灯模式
-                                    .setNeedClip(true)            //设置是否需要支持片段录制
-                                    .setVideoQuality(VideoQuality.SSD)   //设置视频质量
-                                    .setGop(50)             //设置关键帧
-                                    .setMaxDuration(120 * 1000)  //设置最大录制时长
-                                    .setMinDuration(1000)   //设置最小录制时长
-                                    .setFrameRate(25)   //设置帧率
-                                    .setCropMode(ScaleMode.PS)  //设置裁剪模式，目前支持有黑边和无黑边两种
-                                    .setSortMode(AliyunSnapVideoParam.SORT_MODE_VIDEO) //设置导入相册过滤选择器
-                                    .build();
-                            // 开始拍摄视频
-                            AliyunVideoRecorder.startRecordForResult(ZRXMatisseActivity.this, 2000, mRecordParam);
-                        } else {
-                            Toast.makeText(ZRXMatisseActivity.this, "需要权限", Toast.LENGTH_SHORT).show();
-//                                ToastUtils.shortShow(getString(R.string.permission_request_denied_sdcard));
-                        }
-                    }
-                });
-    }
 }

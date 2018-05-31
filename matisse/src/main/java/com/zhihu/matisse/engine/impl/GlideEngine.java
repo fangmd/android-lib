@@ -20,8 +20,8 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
 import com.bumptech.glide.Priority;
+import com.lhjx.imagelib.GlideApp;
 import com.zhihu.matisse.R;
 import com.zhihu.matisse.engine.ImageEngine;
 
@@ -31,19 +31,19 @@ import com.zhihu.matisse.engine.ImageEngine;
 public class GlideEngine implements ImageEngine {
 
     public void loadThumbnail(Context context, ImageView imageView, String url) {
-        Glide.with(context)
-                .load(url)
+        GlideApp.with(context)
                 .asBitmap()
-                .fitCenter()
+                .load(url)
                 .placeholder(R.drawable.loading)
+                .fitCenter()
                 .dontAnimate()
                 .into(imageView);
     }
 
     public void loadThumbnailVideo(Context context, ImageView imageView, String url) {
-        Glide.with(context)
-                .load(R.drawable.video)
+        GlideApp.with(context)
                 .asBitmap()
+                .load(R.drawable.video)
                 .error(R.drawable.video)
                 .fitCenter()
                 .into(imageView);
@@ -51,9 +51,9 @@ public class GlideEngine implements ImageEngine {
 
 
     public void loadThumbnail(Context context, ImageView imageView, Uri uri) {
-        Glide.with(context)
-                .load(uri)
+        GlideApp.with(context)
                 .asBitmap()
+                .load(uri)
                 .placeholder(R.drawable.loading)
                 .fitCenter()
                 .dontAnimate()
@@ -61,9 +61,9 @@ public class GlideEngine implements ImageEngine {
     }
 
     public void loadThumbnailVideo(Context context, ImageView imageView, Uri uri) {
-        Glide.with(context)
-                .load(R.drawable.video)
+        GlideApp.with(context)
                 .asBitmap()
+                .load(R.drawable.video)
                 .error(R.drawable.video)
                 .fitCenter()
                 .into(imageView);
@@ -73,9 +73,9 @@ public class GlideEngine implements ImageEngine {
 
     @Override
     public void loadThumbnail(Context context, int resize, Drawable placeholder, ImageView imageView, Uri uri) {
-        Glide.with(context)
-                .load(uri)
+        GlideApp.with(context)
                 .asBitmap()
+                .load(uri)
                 .placeholder(placeholder)
                 .override(resize, resize)
                 .centerCrop()
@@ -86,9 +86,9 @@ public class GlideEngine implements ImageEngine {
     @Override
     public void loadGifThumbnail(Context context, int resize, Drawable placeholder, ImageView imageView,
                                  Uri uri) {
-        Glide.with(context)
-                .load(uri)
+        GlideApp.with(context)
                 .asBitmap()
+                .load(uri)
                 .placeholder(R.drawable.loading)
                 .override(resize, resize)
                 .centerCrop()
@@ -98,7 +98,7 @@ public class GlideEngine implements ImageEngine {
 
     @Override
     public void loadImage(Context context, int resizeX, int resizeY, ImageView imageView, Uri uri) {
-        Glide.with(context)
+        GlideApp.with(context)
                 .load(uri)
                 .placeholder(R.drawable.loading)
                 .override(resizeX, resizeY)
@@ -109,7 +109,7 @@ public class GlideEngine implements ImageEngine {
 
     @Override
     public void loadImage(Context context, ImageView imageView, String url) {
-        Glide.with(context)
+        GlideApp.with(context)
                 .load(url)
                 .placeholder(R.drawable.loading)
                 .priority(Priority.HIGH)
@@ -119,9 +119,9 @@ public class GlideEngine implements ImageEngine {
 
     @Override
     public void loadGifImage(Context context, int resizeX, int resizeY, ImageView imageView, Uri uri) {
-        Glide.with(context)
-                .load(uri)
+        GlideApp.with(context)
                 .asGif()
+                .load(uri)
                 .placeholder(R.drawable.loading)
                 .override(resizeX, resizeY)
                 .priority(Priority.HIGH)

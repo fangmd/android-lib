@@ -36,11 +36,11 @@ ext.supportLibVersion = '27.1.1'
 
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
-    api "com.android.support:support-v4:${supportLibVersion}"
-    api "com.android.support:appcompat-v7:${supportLibVersion}"
-    api "com.android.support:support-annotations:${supportLibVersion}"
-    api "com.android.support:recyclerview-v7:${supportLibVersion}"
-    api 'it.sephiroth.android.library.imagezoom:library:1.0.4'
+    implementation "com.android.support:support-v4:${supportLibVersion}"
+    implementation "com.android.support:appcompat-v7:${supportLibVersion}"
+    implementation "com.android.support:support-annotations:${supportLibVersion}"
+    implementation "com.android.support:recyclerview-v7:${supportLibVersion}"
+    implementation 'it.sephiroth.android.library.imagezoom:library:1.0.4'
 
     implementation project(':opensourcelib')
     implementation project(':imagelib')
