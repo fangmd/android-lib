@@ -1,4 +1,4 @@
-package com.lhjx.crashcollection;
+package com.lhjx.opensourcelib;
 
 import org.junit.Test;
 

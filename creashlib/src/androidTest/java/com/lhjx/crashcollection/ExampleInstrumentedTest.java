@@ -1,4 +1,4 @@
-package com.njfae.crashcollection;
+package com.lhjx.crashcollection;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

@@ -1,4 +1,4 @@
-package com.njfae.pushlibrary;
+package com.lhjx.pushlibrary;
 
 import org.junit.Test;
 

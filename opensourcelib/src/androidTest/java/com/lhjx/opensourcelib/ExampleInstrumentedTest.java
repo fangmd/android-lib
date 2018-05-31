@@ -1,4 +1,4 @@
-package com.njfae.opensourcelib;
+package com.lhjx.opensourcelib;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

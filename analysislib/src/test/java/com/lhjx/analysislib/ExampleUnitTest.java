@@ -1,4 +1,4 @@
-package com.njfae.opensourcelib;
+package com.lhjx.analysislib;
 
 import org.junit.Test;
 

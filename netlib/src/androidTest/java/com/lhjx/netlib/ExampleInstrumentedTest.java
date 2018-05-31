@@ -1,4 +1,4 @@
-package com.lhjx.pushlibrary;
+package com.lhjx.netlib;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.njfae.pushlibrary.test", appContext.getPackageName());
+        assertEquals("com.njfae.netlib.test", appContext.getPackageName());
     }
 }

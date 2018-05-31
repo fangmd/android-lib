@@ -44,7 +44,6 @@
 # 分享库
 
 
-
 # 网络库 (2d)
 
 
@@ -52,9 +51,7 @@
 
 umeng 统计
 
-ga
-
-TalkingData
+>待处理：ga, TalkingData
 
 
 # 加密库 (3d)

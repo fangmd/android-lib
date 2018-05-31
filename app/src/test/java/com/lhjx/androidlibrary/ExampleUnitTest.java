@@ -1,4 +1,4 @@
-package com.njfae.androidlibrary;
+package com.lhjx.androidlibrary;
 
 import org.junit.Test;
 

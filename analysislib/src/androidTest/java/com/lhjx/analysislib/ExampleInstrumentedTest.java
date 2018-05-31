@@ -1,4 +1,4 @@
-package com.njfae.analysislib;
+package com.lhjx.analysislib;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
