@@ -1,17 +1,11 @@
 package com.lhjx.netlib.utils;
 
 import android.content.Context;
-import android.support.annotation.DrawableRes;
-import android.text.TextUtils;
 import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.zrx.app.R;
-import com.zrx.app.base.UiUtils;
+import com.lhjx.netlib.NetManager;
+
 
 /**
  * Created by yabusai on 15/2/4.
@@ -72,37 +66,11 @@ public class ToastUtils {
     }
 
     public static void shortShow(CharSequence text) {
-        show(UiUtils.getContext(), text, Toast.LENGTH_SHORT);
+        show(NetManager.sContext, text, Toast.LENGTH_SHORT);
     }
 
     public static void longShow(CharSequence text) {
-        show(UiUtils.getContext(), text, Toast.LENGTH_LONG);
+        show(NetManager.sContext, text, Toast.LENGTH_LONG);
     }
 
-    public static void showWithIcon(Context context, @DrawableRes int iconId, String msg) {
-        if (context == null) {
-            return;
-        }
-        if (TextUtils.isEmpty(msg)) {
-            msg = "";
-        }
-
-        if (sIconToast == null) {
-            View view = LayoutInflater.from(context).inflate(R.layout.toast_layout_with_icon, null, false);
-            ((TextView) view.findViewById(R.id.tv_toast)).setText(msg);
-            ((ImageView) view.findViewById(R.id.iv_toast)).setImageResource(iconId);
-            sIconToast = new Toast(context);
-            sIconToast.setDuration(Toast.LENGTH_SHORT);
-            sIconToast.setGravity(Gravity.CENTER, 0, 0);
-            sIconToast.setView(view);
-
-        } else {
-            View view = sIconToast.getView();
-            ((TextView) view.findViewById(R.id.tv_toast)).setText(msg);
-            ((ImageView) view.findViewById(R.id.iv_toast)).setImageResource(iconId);
-
-        }
-        sIconToast.show();
-
-    }
 }
