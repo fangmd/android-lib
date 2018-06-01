@@ -7,7 +7,7 @@ package com.njfae.webviewlib;
 public interface MyWebViewListener {
 
     void showErrorPage();
-    void showPageLoadFinish();
 
+    void showPageLoadFinish();
 
 }

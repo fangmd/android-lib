@@ -70,9 +70,6 @@ public class MyWebView extends BridgeWebView {
         webSetting.setSupportMultipleWindows(false);
         webSetting.setTextZoom(100); // 防止系统字体设置对 WebView 的影响
 
-        String userAgentString = webSetting.getUserAgentString();
-        String newUA = userAgentString + " versioncode="+ BuildConfig.VERSION_CODE +"/njzxAndroid/" + BuildConfig.VERSION_NAME;
-        webSetting.setUserAgentString(newUA);
 
 //        webSetting.setCacheMode(WebSettings.LOAD_NORMAL);
 //        getSettingsExtension().setPageCacheCapacity(IX5WebSettings.DEFAULT_CACHE_CAPACITY);//extension
@@ -81,6 +78,16 @@ public class MyWebView extends BridgeWebView {
         setHorizontalScrollBarEnabled(false);//水平不显示
         setVerticalScrollBarEnabled(false); //垂直不显示
         setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY); //滚动条在WebView外侧显示
+    }
+
+    /**
+     * user agent 添加
+     */
+    public void appendUA(String ua) {
+        WebSettings webSetting = getSettings();
+        String userAgentString = webSetting.getUserAgentString();
+        String newUA = userAgentString + ua;
+        webSetting.setUserAgentString(newUA);
     }
 
     private WebViewClient mWebViewClient = new WebViewClient() {
