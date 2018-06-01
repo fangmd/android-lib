@@ -14,7 +14,7 @@ import com.tencent.smtt.sdk.WebViewClient;
 
 /**
  * Author: Created by fangmingdong on 2018/4/24-上午9:04
- * Description:
+ * Description: 集成 JSBridge 的 X5WebView
  */
 public class MyWebViewJsBridge extends BridgeWebView {
 

@@ -32,6 +32,30 @@ PushUtils.register(context);
 PushUtils.register(context, account);
 ```
 
+### 华为渠道
+
+manifestPlaceholders 中增加 HW_APPID
+
+```
+defaultConfig{
+        manifestPlaceholders = [
+                HW_APPID: "华为的APPID",
+        ]
+}
+```
+
+### 小米渠道
+
+manifestPlaceholders 中增加 PACKAGE_NAME
+
+```
+defaultConfig{
+    manifestPlaceholders = [
+        PACKAGE_NAME:"应用包名"
+    ]
+}
+```
+
 # 问题记录
 
 小米厂商推送实时性不好。
@@ -61,11 +85,11 @@ PushUtils.register(context, account);
 -keep class com.huawei.hms.**{*;}
 
 
-# meizu
+# 魅族推动
 -dontwarn com.meizu.cloud.pushsdk.**
 -keep class com.meizu.cloud.pushsdk.**{*;}
 
-# xiao mi
+# 小米推送
 -keepclasseswithmembernames class com.xiaomi.**{*;}
 -keep public class * extends com.xiaomi.mipush.sdk.PushMessageReceiver
 ```

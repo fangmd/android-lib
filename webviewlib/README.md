@@ -29,7 +29,7 @@ Activity:
 
 ```
     private void addWebView() {
-        mWebView = new MyWebView(this);
+        mWebView = new MyWebViewJsBridge(this);
         mWebView.setMyWebViewListener(this);
         mFLWeb.addView(mWebView);
         mFLWeb.post(() -> {
