@@ -3,6 +3,7 @@ include ':app', ':analysislib', ':netlib',
         ':creashlib',
         ':pushlib',
         ':matisse',
-        ':imagelib'
+        ':imagelib',
+        'webviewlib'
 
 

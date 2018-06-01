@@ -17,7 +17,7 @@
 
 >备注：魅族渠道待测试
 
-# CrashCollection (1d)
+# CrashCollection
 
 介绍：Fabric 崩溃收集
 
@@ -28,15 +28,15 @@
 介绍：存放不需要封装的公共第三方库
 
 
-# 图片视频选择库 (1d)
+# 图片视频选择库
 
 介绍：基于知乎图库的图片视频选择库
 
-# X5WebView + JsBridge 库 (2d)
+# X5WebView + JsBridge 库
 
 
 
-# 图片加载库 (1d)
+# 图片加载库
 
 介绍：基于 glide 的图片加载库
 
@@ -44,7 +44,9 @@
 # 分享库
 
 
-# 网络库 (2d)
+# 网络库
+
+介绍：RxJava + Retrofit + OkHttp
 
 
 # 统计库 AnalysisLib
@@ -54,9 +56,10 @@ umeng 统计
 >待处理：ga, TalkingData
 
 
-# 加密库 (3d)
+# 加密库
 
 介绍：文件，字符串 加密库
+
 
 
 # 应用更新库
