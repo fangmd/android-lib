@@ -1,7 +1,7 @@
 
 X5WebView + JSBridge 库
 
-JSBridge 版本：com.github.lzyzsd:jsbridge:1.0.4
+JSBridge 版本：2018/6/1
 
 X5WebView 版本：3.6.0.1234_43608
 

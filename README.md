@@ -37,6 +37,8 @@
 
 介绍：腾讯 X5WebView 和 JsBridge 库结合
 
+>JSBridge github 上反馈有很多bug
+
 # 图片加载库
 
 介绍：基于 glide 的图片加载库

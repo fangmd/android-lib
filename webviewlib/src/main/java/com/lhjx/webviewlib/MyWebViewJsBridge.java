@@ -1,4 +1,4 @@
-package com.njfae.webviewlib;
+package com.lhjx.webviewlib;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ProgressBar;
 
-import com.njfae.webviewlib.jsbridge.BridgeWebView;
+import com.lhjx.webviewlib.jsbridge.BridgeWebView;
 import com.tencent.smtt.sdk.WebChromeClient;
 import com.tencent.smtt.sdk.WebSettings;
 import com.tencent.smtt.sdk.WebView;
@@ -16,24 +16,24 @@ import com.tencent.smtt.sdk.WebViewClient;
  * Author: Created by fangmingdong on 2018/4/24-上午9:04
  * Description:
  */
-public class MyWebView extends BridgeWebView {
+public class MyWebViewJsBridge extends BridgeWebView {
 
-    public static final String TAG = MyWebView.class.getSimpleName();
+    public static final String TAG = MyWebViewJsBridge.class.getSimpleName();
 
     private MyWebViewListener mMyWebViewListener;
     private ProgressBar mProgressBar;
 
-    public MyWebView(Context context) {
+    public MyWebViewJsBridge(Context context) {
         super(context);
         initView();
     }
 
-    public MyWebView(Context context, AttributeSet attributeSet) {
+    public MyWebViewJsBridge(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         initView();
     }
 
-    public MyWebView(Context context, AttributeSet attributeSet, int i) {
+    public MyWebViewJsBridge(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         initView();
     }

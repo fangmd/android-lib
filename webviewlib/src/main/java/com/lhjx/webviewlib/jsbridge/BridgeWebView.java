@@ -1,4 +1,4 @@
-package com.njfae.webviewlib.jsbridge;
+package com.lhjx.webviewlib.jsbridge;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

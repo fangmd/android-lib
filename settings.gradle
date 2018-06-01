@@ -1,6 +1,6 @@
 include ':app', ':analysislib', ':netlib',
         ':opensourcelib',
-        ':creashlib',
+        ':crashlib',
         ':pushlib',
         ':matisse',
         ':imagelib',

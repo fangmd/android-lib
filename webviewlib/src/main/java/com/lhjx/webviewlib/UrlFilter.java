@@ -1,4 +1,4 @@
-package com.njfae.webviewlib;
+package com.lhjx.webviewlib;
 
 import android.content.Context;
 import android.content.Intent;

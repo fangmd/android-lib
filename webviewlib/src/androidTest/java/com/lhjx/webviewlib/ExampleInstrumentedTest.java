@@ -1,4 +1,4 @@
-package com.njfae.webviewlib;
+package com.lhjx.webviewlib;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

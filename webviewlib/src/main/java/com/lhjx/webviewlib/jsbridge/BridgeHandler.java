@@ -1,4 +1,4 @@
-package com.njfae.webviewlib.jsbridge;
+package com.lhjx.webviewlib.jsbridge;
 
 public interface BridgeHandler {
 	

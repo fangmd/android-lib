@@ -1,4 +1,4 @@
-package com.njfae.webviewlib;
+package com.lhjx.webviewlib;
 
 import org.junit.Test;
 
