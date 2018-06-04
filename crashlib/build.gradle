@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-//apply plugin: 'io.fabric'
+apply plugin: 'io.fabric'
 
 android {
     compileSdkVersion 27
@@ -27,8 +27,8 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-//    api('com.crashlytics.sdk.android:crashlytics:2.9.3@aar') {
-//        transitive = true;
-//    }
+    api('com.crashlytics.sdk.android:crashlytics:2.9.3@aar') {
+        transitive = true
+    }
     //fabric
 }
