@@ -4,6 +4,7 @@ include ':app', ':analysislib', ':netlib',
         ':pushlib',
         ':matisse',
         ':imagelib',
-        'webviewlib'
+        ':webviewlib',
+        ':encryptionlib'
 
 
