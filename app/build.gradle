@@ -9,6 +9,13 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        manifestPlaceholders = [
+                XG_ACCESS_ID : "2100282816",
+                XG_ACCESS_KEY: "A7F7NC88XM2A",
+                HW_APPID: "华为的APPID",
+        ]
+
     }
     buildTypes {
         release {
@@ -27,4 +34,5 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
 
+    implementation project(":pushlib")
 }

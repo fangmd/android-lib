@@ -5,7 +5,7 @@
 2. `README.md` 文件需要包含以下内容：Module 介绍，使用和集成方法，已知 bug ，历史更新记录，proguard rule
 3. 主工程中写测试代码
 4. 命名规则：moduleName + lib
-5. 包名：lhjx
+5. 包名：com.lhjx.xxxx
 
 >下面列举了最近工作涉及到的库，其他的大家可以补充
 

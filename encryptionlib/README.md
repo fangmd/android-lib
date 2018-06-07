@@ -4,6 +4,9 @@
 
 使用 aes 加密字符串
 
+# 集成与使用
+
+调用 AESCryptor 类中的 crypt 实现加解密
 
 # 测试代码
 
@@ -26,7 +29,7 @@
 
 ```Java
     /**
-     * 加密后的字符串做一次 Base64 加密
+     * 加密后的字符串做一次 Base64
      */
     private void oneBase64() {
         String TESTDATA = "njfea--test";

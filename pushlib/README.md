@@ -4,7 +4,7 @@
 
 # 信鸽 推送
 
-api 'com.tencent.xinge:xinge:3.2.2-release'
+api 'com.tencent.xinge:xinge:3.2.3-release'
 api 'com.tencent.wup:wup:1.0.0.E-release'
 api 'com.tencent.mid:mid:4.0.6-release'
 
@@ -18,6 +18,7 @@ defaultConfig{
         manifestPlaceholders = [
                 XG_ACCESS_ID : "2100282816",
                 XG_ACCESS_KEY: "A7F7NC88XM2A",
+                HW_APPID: "华为的APPID",
         ]
 }
 ```
@@ -54,6 +55,31 @@ defaultConfig{
         PACKAGE_NAME:"应用包名"
     ]
 }
+```
+
+### 使用
+
+```
+        PushManager pushManager = new PushManager.Builder(this)
+                .enableDebug(true)
+                .enableHWDebug(true)
+                .setPushCallback(new PushCallback() {
+                    @Override
+                    public void onSuccess(Object data, int flag) {
+
+                    }
+
+                    @Override
+                    public void onFail(Object data, int errCode, String msg) {
+
+                    }
+                })
+                .setAccount("account")
+                .enableMi("", "")
+                .enableHW("", "")
+                .enableMZ("", "")
+                .build();
+        pushManager.init();
 ```
 
 # 问题记录

@@ -31,6 +31,6 @@ allprojects {
 
 ```
 CrashUtils.init(this);
-
-
+// 设置用户信息
+CrashUtils.logUser(userId, userEmail, userName);
 ```
