@@ -1,10 +1,11 @@
 apply plugin: 'com.android.library'
 
+
 android {
     compileSdkVersion 27
 
     defaultConfig {
-        minSdkVersion 21
+        minSdkVersion 16
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -22,15 +23,7 @@ android {
 
 }
 
-task makeJar(type: Copy) {
-    delete 'build/libs/imagelib.jar'
-    from('build/intermediates/bundles/release/')
-    into('build/libs/')
-    include('classes.jar')
-    rename('classes.jar', 'imagelib.jar')
-}
 
-makeJar.dependsOn(build)
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -43,3 +36,12 @@ dependencies {
     // If you want to use the GPU Filters
 //    implementation 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1'
 }
+
+// 手动上传
+apply from: "local-config.gradle"
+apply from: "android-release-aar.gradle"
+
+
+// 自动上传
+//apply from: "local-config.gradle"
+//apply from: 'publish.gradle'

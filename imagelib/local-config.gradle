@@ -1,0 +1,8 @@
+ext {
+    PUBLISH_GROUP_ID = 'com.lhjx.imagelib'
+    PUBLISH_ARTIFACT_ID = 'imagelib'
+    // *版本号*
+    PUBLISH_VERSION = '1.0.1'
+}
+
+

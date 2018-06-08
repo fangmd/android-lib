@@ -13,11 +13,21 @@ android {
         manifestPlaceholders = [
                 XG_ACCESS_ID : "2100282816",
                 XG_ACCESS_KEY: "A7F7NC88XM2A",
-                HW_APPID: "华为的APPID",
+                HW_APPID     : "华为的APPID",
         ]
+
+
+        ndk {
+            abiFilters 'armeabi'
+        }
+
 
     }
     buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -35,4 +45,5 @@ dependencies {
 
 
     implementation project(":pushlib")
+    implementation project(":imagelib")
 }

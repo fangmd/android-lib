@@ -1,0 +1,22 @@
+# ninja log v5
+2	116	0	CMakeFiles/aes_jni.dir/src/main/cpp/main.c.o	689367382b1865b
+1	279	0	CMakeFiles/aes_jni.dir/src/main/cpp/aes/aes.c.o	7881bde1cbab0e3f
+279	365	0	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libaes_jni.so	2a3f7ce5ed445dd1
+4	135	0	CMakeFiles/aes_jni.dir/src/main/cpp/main.c.o	689367382b1865b
+1	369	0	CMakeFiles/aes_jni.dir/src/main/cpp/aes/aes.c.o	7881bde1cbab0e3f
+369	456	0	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libaes_jni.so	2a3f7ce5ed445dd1
+2	101	0	CMakeFiles/aes_jni.dir/src/main/cpp/main.c.o	689367382b1865b
+1	179	0	CMakeFiles/aes_jni.dir/src/main/cpp/aes/aes.c.o	7881bde1cbab0e3f
+179	237	0	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libaes_jni.so	2a3f7ce5ed445dd1
+1	77	0	CMakeFiles/aes_jni.dir/src/main/cpp/main.c.o	689367382b1865b
+1	142	0	CMakeFiles/aes_jni.dir/src/main/cpp/aes/aes.c.o	7881bde1cbab0e3f
+143	193	0	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libaes_jni.so	2a3f7ce5ed445dd1
+2	124	0	CMakeFiles/aes_jni.dir/src/main/cpp/main.c.o	689367382b1865b
+1	340	0	CMakeFiles/aes_jni.dir/src/main/cpp/aes/aes.c.o	7881bde1cbab0e3f
+340	423	0	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libaes_jni.so	2a3f7ce5ed445dd1
+2	106	0	CMakeFiles/aes_jni.dir/src/main/cpp/main.c.o	689367382b1865b
+1	233	0	CMakeFiles/aes_jni.dir/src/main/cpp/aes/aes.c.o	7881bde1cbab0e3f
+233	298	0	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libaes_jni.so	2a3f7ce5ed445dd1
+1	104	0	CMakeFiles/aes_jni.dir/src/main/cpp/main.c.o	689367382b1865b
+1	288	0	CMakeFiles/aes_jni.dir/src/main/cpp/aes/aes.c.o	7881bde1cbab0e3f
+288	380	0	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libaes_jni.so	2a3f7ce5ed445dd1

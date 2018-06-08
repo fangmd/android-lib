@@ -3,6 +3,7 @@ package com.lhjx.imagelib;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -16,7 +17,6 @@ import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
-import com.fangmingdong.imagelib.R;
 import com.lhjx.imagelib.progress.ProgressInterceptor;
 import com.lhjx.imagelib.progress.ProgressListener;
 
@@ -97,11 +97,15 @@ public class ImageManager {
     }
 
     private static void load(GlideRequests with, String url, ImageView iv, @DrawableRes int placeHolder, @DrawableRes int error) {
-        load(with, url, iv, placeHolder, error, CropType.CENTER_CROP);
+        load(with, url, iv, placeHolder, error, CropType.FIT_CROP);
     }
 
     private static void load(GlideRequests with, String url, ImageView iv, @DrawableRes int placeHolder, @DrawableRes int error, @CropType int cropType) {
-        GlideRequest<Bitmap> request = with.asBitmap()
+//        GlideRequest<Drawable> error1 = with.load(url)
+//                .placeholder(placeHolder)
+//                .error(error);
+        GlideRequest<Drawable> request = with
+//                .asBitmap()
                 .load(url)
                 .placeholder(placeHolder)
                 .error(error);
@@ -113,6 +117,8 @@ public class ImageManager {
             case CropType.FIT_CROP:
                 request.fitCenter();
                 break;
+            case CropType.CENTER_INSIDE:
+                request.centerInside();
             case CropType.NONE:
                 break;
             default:
@@ -201,13 +207,18 @@ public class ImageManager {
 
     /**
      * 加载缩略图
+     *
+     * @param context context
+     * @param width   width
+     * @param height  height
+     * @param url     url
+     * @param iv      ImageView
      */
     public static void loadThumbnail(Context context, int width, int height, String url, ImageView iv) {
         int measuredHeight = iv.getMeasuredHeight();
         int measuredWidth = iv.getMeasuredWidth();
         Log.d(TAG, "loadThumbnail: " + measuredWidth + "x" + measuredHeight);
         GlideApp.with(context)
-                .asBitmap()
                 .load(url)
                 .override(width, height)
                 .centerCrop()
@@ -217,10 +228,16 @@ public class ImageManager {
     /**
      * 下载图片,耗时操作不能放在主线程中进行
      * 下载的图片地址在：文件名：{@link MyGlideModule#CACHE_FILE_NAME}
+     *
+     * @param context
+     * @param url
+     * @param imageDownloadListener
      */
     public static void downloadImage(Context context, String url, final IImageDownloadListener imageDownloadListener) {
         try {
-            GlideApp.with(context).asBitmap().load(url).listener(new RequestListener<Bitmap>() {
+            GlideApp.with(context)
+                    .asBitmap()
+                    .load(url).listener(new RequestListener<Bitmap>() {
                 @Override
                 public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Bitmap> target, boolean
                         isFirstResource) {

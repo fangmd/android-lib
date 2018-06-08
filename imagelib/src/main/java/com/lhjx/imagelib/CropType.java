@@ -8,6 +8,7 @@ import java.lang.annotation.RetentionPolicy;
 import static com.lhjx.imagelib.CropType.CENTER_CROP;
 import static com.lhjx.imagelib.CropType.FIT_CROP;
 import static com.lhjx.imagelib.CropType.NONE;
+import static com.lhjx.imagelib.CropType.CENTER_INSIDE;
 
 
 /**
@@ -15,7 +16,7 @@ import static com.lhjx.imagelib.CropType.NONE;
  * Created by double on 2018/4/7.
  */
 
-@IntDef({CENTER_CROP, FIT_CROP, NONE})
+@IntDef({CENTER_CROP, FIT_CROP, CENTER_INSIDE,NONE})
 @Retention(RetentionPolicy.SOURCE)
 public @interface CropType {
 
@@ -24,14 +25,19 @@ public @interface CropType {
      */
     public static final int FIT_CROP = 0x00000001;
 
+
     /**
      * 缩放图像让它填充到 ImageView 界限内并且裁剪额外的部分。ImageView 会被完全填充，但图像可能不会完整显示
      */
     public static final int CENTER_CROP = 0x00000002;
 
+    public static final int CENTER_INSIDE = 0x00000003;
+
     /**
      * 不设置
      */
-    public static final int NONE = 0x00000003;
+    public static final int NONE = 0x00000004;
+
+
 
 }

@@ -11,7 +11,7 @@
 #define DECRYPT 1
 #define AES_KEY_SIZE 256
 #define READ_LEN 10
-#define TARGET_CLASS "com/lhjx/encryption/encryptionlib/AESCryptor"
+#define TARGET_CLASS "com/lhjx/encryption/AESCryptor"
 #define TARGET_CRYPT "crypt"
 #define TARGET_CRYPT_SIG "([BJI)[B"
 #define TARGET_READ "read"
