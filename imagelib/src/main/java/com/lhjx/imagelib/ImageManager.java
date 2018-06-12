@@ -82,6 +82,11 @@ public class ImageManager {
         load(with, url, iv);
     }
 
+    public static void load(Context context, String url, ImageView iv, @DrawableRes int placeHolder, @DrawableRes int error) {
+        GlideRequests with = GlideApp.with(context);
+        load(with, url, iv, placeHolder, error);
+    }
+
     public static void load(Context context, String url, ImageView iv, @CropType int cropType) {
         GlideRequests with = GlideApp.with(context);
         load(with, url, iv, PLACE_HOLDER, LOAD_ERROR, cropType);
