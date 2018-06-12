@@ -2,6 +2,7 @@ package com.lhjx.webviewlib;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.support.annotation.DrawableRes;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -21,6 +22,10 @@ public class MyWebView extends WebView {
 
     private MyWebViewListener mMyWebViewListener;
     private ProgressBar mProgressBar;
+    /**
+     * 是否显示进度条
+     */
+    private boolean mShowProgressBar = true;
 
     public MyWebView(Context context) {
         super(context);
@@ -38,15 +43,17 @@ public class MyWebView extends WebView {
     }
 
     private void initView() {
-        addProgressBar();
+        if (mShowProgressBar) {
+            addProgressBar();
+        }
         initWebViewSettings();
     }
 
     @SuppressLint("SetJavaScriptEnabled")
     private void initWebViewSettings() {
         setBackgroundColor(getResources().getColor(android.R.color.white));
-        setWebViewClient(mWebViewClient);
-        setWebChromeClient(mChromeClient);
+        setWebViewClient(getCustomWebViewClient());
+        setWebChromeClient(getChromeClient());
         setClickable(true);
         WebSettings webSetting = getSettings();
         webSetting.setJavaScriptEnabled(true);
@@ -62,13 +69,11 @@ public class MyWebView extends WebView {
         webSetting.setAppCacheEnabled(true);
         webSetting.setGeolocationEnabled(true);
 
-
         webSetting.setAppCacheMaxSize(Long.MAX_VALUE);
         webSetting.setPluginState(WebSettings.PluginState.ON_DEMAND);
         webSetting.setRenderPriority(WebSettings.RenderPriority.HIGH);
         webSetting.setSupportMultipleWindows(false);
         webSetting.setTextZoom(100); // 防止系统字体设置对 WebView 的影响
-
 
 //        webSetting.setCacheMode(WebSettings.LOAD_NORMAL);
 //        getSettingsExtension().setPageCacheCapacity(IX5WebSettings.DEFAULT_CACHE_CAPACITY);//extension
@@ -77,6 +82,22 @@ public class MyWebView extends WebView {
         setHorizontalScrollBarEnabled(false);//水平不显示
         setVerticalScrollBarEnabled(false); //垂直不显示
         setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY); //滚动条在WebView外侧显示
+    }
+
+    private WebViewClient getCustomWebViewClient() {
+        return mWebViewClient;
+    }
+
+    public WebChromeClient getChromeClient() {
+        return mChromeClient;
+    }
+
+    /**
+     * 设置 UA
+     */
+    public void setUA(String ua) {
+        WebSettings webSetting = getSettings();
+        webSetting.setUserAgentString(ua);
     }
 
     /**
@@ -123,12 +144,14 @@ public class MyWebView extends WebView {
 
     private WebChromeClient mChromeClient = new WebChromeClient() {
 
-
         /**
          * 网页加载进度监听
          */
         @Override
         public void onProgressChanged(WebView webView, int progress) {
+            if (!mShowProgressBar) {
+                return;
+            }
             if (progress == 100) {
                 mProgressBar.setVisibility(GONE);
             } else {
@@ -163,6 +186,15 @@ public class MyWebView extends WebView {
         mMyWebViewListener = myWebViewListener;
     }
 
+    /**
+     * 设置 loading 颜色
+     *
+     * @return drawable
+     */
+    protected @DrawableRes
+    int getLoadingDrawable() {
+        return R.drawable.bg_pb_web_loading;
+    }
 
     /**
      * 添加进度条
@@ -171,9 +203,13 @@ public class MyWebView extends WebView {
         mProgressBar = new ProgressBar(getContext(), null,
                 android.R.attr.progressBarStyleHorizontal);
         mProgressBar.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, 5));
-        mProgressBar.setProgressDrawable(getContext().getResources().getDrawable(R.drawable.bg_pb_web_loading));
+        mProgressBar.setProgressDrawable(getContext().getResources().getDrawable(getLoadingDrawable()));
 
         addView(mProgressBar);
+    }
+
+    public void setShowProgressBar(boolean showProgressBar) {
+        mShowProgressBar = showProgressBar;
     }
 
 }

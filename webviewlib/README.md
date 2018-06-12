@@ -49,6 +49,26 @@ Activity:
     }
 ```
 
+## 自定义 UA
+
+继承 MyWebView 或 MyWebViewJsBridge 实现 `setUA()` 或 `appendUA()`。
+
+## 设置是否显示 LoadingProgress 和 loading 的颜色
+
+调用 'setShowProgressBar()' 方法设置是否显示 LoadingProgress
+
+设置颜色：继承然后重写 `getLoadingDrawable()` 方法
+
+
+## MyWebViewListener
+
+网页加载成功失败的结果回调
+
+## 自定义 WebViewClient 和 WebChromeClient
+
+继承后重写 `getCustomWebViewClient()`, `getChromeClient()` 方法。
+
+
 # proguard
 
 ```
