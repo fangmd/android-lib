@@ -20,3 +20,7 @@
 1	90	0	CMakeFiles/aes_jni.dir/src/main/cpp/main.c.o	7c3021e68aba3684
 1	140	0	CMakeFiles/aes_jni.dir/src/main/cpp/aes/aes.c.o	6589d7d3a0e60eb1
 140	202	0	../../../../build/intermediates/cmake/debug/obj/x86/libaes_jni.so	cb08941bf69365c7
+0	56	0	build.ninja	7c054dfcd16db310
+1	123	0	CMakeFiles/aes_jni.dir/src/main/cpp/main.c.o	7c3021e68aba3684
+0	190	0	CMakeFiles/aes_jni.dir/src/main/cpp/aes/aes.c.o	6589d7d3a0e60eb1
+190	248	0	../../../../build/intermediates/cmake/debug/obj/x86/libaes_jni.so	cb08941bf69365c7

@@ -14,3 +14,7 @@
 1	99	0	CMakeFiles/aes_jni.dir/src/main/cpp/main.c.o	93d0d13558f1a0a3
 0	705	0	CMakeFiles/aes_jni.dir/src/main/cpp/aes/aes.c.o	b488e4c937bd2e09
 705	744	0	../../../../build/intermediates/cmake/release/obj/arm64-v8a/libaes_jni.so	de5698c43ce82d75
+1	53	0	build.ninja	9cb3d8c62c358e3f
+0	86	0	CMakeFiles/aes_jni.dir/src/main/cpp/main.c.o	93d0d13558f1a0a3
+0	625	0	CMakeFiles/aes_jni.dir/src/main/cpp/aes/aes.c.o	b488e4c937bd2e09
+625	663	0	../../../../build/intermediates/cmake/release/obj/arm64-v8a/libaes_jni.so	de5698c43ce82d75
