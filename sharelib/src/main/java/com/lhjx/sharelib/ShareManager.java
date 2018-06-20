@@ -1,6 +1,14 @@
 package com.lhjx.sharelib;
 
+import android.app.Activity;
+import android.text.TextUtils;
+
 import com.umeng.socialize.PlatformConfig;
+import com.umeng.socialize.ShareAction;
+import com.umeng.socialize.UMShareListener;
+import com.umeng.socialize.bean.SHARE_MEDIA;
+import com.umeng.socialize.media.UMImage;
+import com.umeng.socialize.media.UMWeb;
 
 /**
  * Author: Created by fangmingdong on 2018/6/13-下午4:19
@@ -29,6 +37,41 @@ public class ShareManager {
         PlatformConfig.setQQZone(appKey, appSecret);
     }
 
+    /**
+     * 分享网页连接
+     */
+    public static void shareWeb(Activity activity, String url, String thumbUrl, String title, String desc, UMShareListener umShareListener) {
+        UMImage thumb = null;
+        if (TextUtils.isEmpty(thumbUrl)) {
+//            thumb = new UMImage(activity, R.mipmap.ic_launcher);
+        } else {
+            thumb = new UMImage(activity, thumbUrl);
+        }
+
+        UMWeb web = new UMWeb(url);
+        web.setTitle(title); //标题
+        web.setThumb(thumb);
+        web.setDescription(desc);//描述
+
+        new ShareAction(activity)
+                .withMedia(web)
+                .setDisplayList(SHARE_MEDIA.WEIXIN, SHARE_MEDIA.WEIXIN_CIRCLE, SHARE_MEDIA.QQ)
+                .setCallback(umShareListener)
+                .open();
+    }
+
+    /**
+     * 分享图片
+     */
+    public static void shareImg(Activity activity, String imgBase64, UMShareListener umShareListener) {
+        UMImage umImage = new UMImage(activity, ShareUtils.decodeBase64(imgBase64));
+
+        new ShareAction(activity)
+                .withMedia(umImage)
+                .setDisplayList(SHARE_MEDIA.WEIXIN, SHARE_MEDIA.WEIXIN_CIRCLE, SHARE_MEDIA.QQ)
+                .setCallback(umShareListener)
+                .open();
+    }
 
     /**
      *
