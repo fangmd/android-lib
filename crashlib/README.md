@@ -15,7 +15,8 @@ buildscript {
         maven { url 'https://maven.fabric.io/public' }
     }
     dependencies {
-        //...
+        //通过下方地址查看最新版本号
+        //https://s3.amazonaws.com/fabric-artifacts/public/io/fabric/tools/gradle/maven-metadata.xml
         classpath 'io.fabric.tools:gradle:1.25.4'
 
     }
@@ -29,8 +30,22 @@ allprojects {
 }
 ```
 
+`AndroidManifest.xml`
+
+```
+<meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="d0df73d15725d3055fc73c199f8c056f1c239f92" />
+```
+
 ```
 CrashUtils.init(this);
 // 设置用户信息
 CrashUtils.logUser(userId, userEmail, userName);
 ```
+
+# ---
+
+
+
+

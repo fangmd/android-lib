@@ -33,3 +33,7 @@ dependencies {
     api 'com.umeng.sdk:utdid:1.1.5.3'
     debugApi 'com.umeng.sdk:debug:1.0.0'
 }
+
+// 手动上传
+apply from: "local-config.gradle"
+apply from: "android-release-aar.gradle"

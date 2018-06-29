@@ -7,9 +7,9 @@
     <application>
 
 
-        <meta-data
-            android:name="io.fabric.ApiKey"
-            android:value="d0df73d15725d3055fc73c199f8c056f1c239f92" />
+        <!--<meta-data-->
+            <!--android:name="io.fabric.ApiKey"-->
+            <!--android:value="d0df73d15725d3055fc73c199f8c056f1c239f92" />-->
 
 
     </application>
