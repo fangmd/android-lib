@@ -3,6 +3,23 @@
 
 fabric
 
+# changelog
+
+## 1.0.0 封版
+
+旺财谷5.5 中使用：
+
+```
+api('com.crashlytics.sdk.android:crashlytics:2.9.4@aar') {
+    transitive = true
+}
+classpath 'io.fabric.tools:gradle:1.25.4'
+```
+
+##
+
+
+
 # 集成与使用
 
 `build.gradle`:

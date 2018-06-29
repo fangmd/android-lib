@@ -1,12 +1,22 @@
 
 
-# umeng 统计
+# changelog
 
+## 1.0.0 封版
+
+旺财谷5.5 中使用：
+
+```
 api 'com.umeng.sdk:common:1.5.1'
 api 'com.umeng.sdk:analytics:7.5.0'
 api 'com.umeng.sdk:utdid:1.1.5.3'
 debugApi 'com.umeng.sdk:debug:1.0.0'
+```
 
+
+
+
+# umeng 统计
 
 ## 集成和使用
 
@@ -50,6 +60,6 @@ public static final int *;
 }
 ```
 
-# TalkingData
+
 
 
