@@ -2,12 +2,12 @@
 {
 	"buildFiles" : 
 	[
-		"/Users/double/work/njjr/project/android-library/encryptionlib/CMakeLists.txt"
+		"/Users/double/work/njjr/01.project/android-library/encryptionlib/CMakeLists.txt"
 	],
 	"cFileExtensions" : [ "c" ],
 	"cleanCommands" : 
 	[
-		"/Users/double/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/double/work/njjr/project/android-library/encryptionlib/.externalNativeBuild/cmake/release/arm64-v8a --target clean"
+		"/Users/double/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/double/work/njjr/01.project/android-library/encryptionlib/.externalNativeBuild/cmake/release/arm64-v8a --target clean"
 	],
 	"libraries" : 
 	{
@@ -15,24 +15,24 @@
 		{
 			"abi" : "arm64-v8a",
 			"artifactName" : "aes_jni",
-			"buildCommand" : "/Users/double/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/double/work/njjr/project/android-library/encryptionlib/.externalNativeBuild/cmake/release/arm64-v8a --target aes_jni",
+			"buildCommand" : "/Users/double/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/double/work/njjr/01.project/android-library/encryptionlib/.externalNativeBuild/cmake/release/arm64-v8a --target aes_jni",
 			"buildType" : "release",
 			"files" : 
 			[
 				
 				{
 					"flags" : "  --target=aarch64-none-linux-android --gcc-toolchain=/Users/double/Library/Android/sdk/ndk-bundle/toolchains/aarch64-linux-android-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/double/Library/Android/sdk/ndk-bundle/sysroot -Daes_jni_EXPORTS  -isystem /Users/double/Library/Android/sdk/ndk-bundle/sysroot/usr/include/aarch64-linux-android -D__ANDROID_API__=21 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG  -fPIC      -c ",
-					"src" : "/Users/double/work/njjr/project/android-library/encryptionlib/src/main/cpp/aes/aes.c",
-					"workingDirectory" : "/Users/double/work/njjr/project/android-library/encryptionlib/.externalNativeBuild/cmake/release/arm64-v8a"
+					"src" : "/Users/double/work/njjr/01.project/android-library/encryptionlib/src/main/cpp/aes/aes.c",
+					"workingDirectory" : "/Users/double/work/njjr/01.project/android-library/encryptionlib/.externalNativeBuild/cmake/release/arm64-v8a"
 				},
 				
 				{
 					"flags" : "  --target=aarch64-none-linux-android --gcc-toolchain=/Users/double/Library/Android/sdk/ndk-bundle/toolchains/aarch64-linux-android-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/double/Library/Android/sdk/ndk-bundle/sysroot -Daes_jni_EXPORTS  -isystem /Users/double/Library/Android/sdk/ndk-bundle/sysroot/usr/include/aarch64-linux-android -D__ANDROID_API__=21 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG  -fPIC      -c ",
-					"src" : "/Users/double/work/njjr/project/android-library/encryptionlib/src/main/cpp/main.c",
-					"workingDirectory" : "/Users/double/work/njjr/project/android-library/encryptionlib/.externalNativeBuild/cmake/release/arm64-v8a"
+					"src" : "/Users/double/work/njjr/01.project/android-library/encryptionlib/src/main/cpp/main.c",
+					"workingDirectory" : "/Users/double/work/njjr/01.project/android-library/encryptionlib/.externalNativeBuild/cmake/release/arm64-v8a"
 				}
 			],
-			"output" : "/Users/double/work/njjr/project/android-library/encryptionlib/build/intermediates/cmake/release/obj/arm64-v8a/libaes_jni.so",
+			"output" : "/Users/double/work/njjr/01.project/android-library/encryptionlib/build/intermediates/cmake/release/obj/arm64-v8a/libaes_jni.so",
 			"toolchain" : "10993624942351675546"
 		}
 	},

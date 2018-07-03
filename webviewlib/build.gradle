@@ -31,3 +31,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:27.1.1'
 }
+
+// 手动上传
+apply from: "local-config.gradle"
+apply from: "android-release-aar.gradle"

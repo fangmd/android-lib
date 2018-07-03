@@ -42,7 +42,7 @@ rule C_SHARED_LIBRARY_LINKER__aes_jni
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /Users/double/Library/Android/sdk/cmake/3.6.4111459/bin/cmake -H/Users/double/work/njjr/project/android-library/encryptionlib -B/Users/double/work/njjr/project/android-library/encryptionlib/.externalNativeBuild/cmake/release/armeabi-v7a
+  command = /Users/double/Library/Android/sdk/cmake/3.6.4111459/bin/cmake -H/Users/double/work/njjr/01.project/android-library/encryptionlib -B/Users/double/work/njjr/01.project/android-library/encryptionlib/.externalNativeBuild/cmake/release/armeabi-v7a
   description = Re-running CMake...
   generator = 1
 

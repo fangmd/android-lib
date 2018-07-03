@@ -9,6 +9,14 @@
 
 >下面列举了最近工作涉及到的库，其他的大家可以补充
 
+# 注意
+
+manifest merge fail 错误修复：
+
+```
+<uses-sdk tools:overrideLibrary="com.lhjx.imagelib, com.lhjx.analysislib, com.lhjx.crashcollection, com.lhjx.webviewlib"/>
+```
+
 
 # release
 
@@ -78,6 +86,8 @@ umeng 统计
 
 
 
-# 应用崩溃收集库
+# 地址选择库 address_selector
+
+>需要优化：增加 可以设置层级的设置
 
 

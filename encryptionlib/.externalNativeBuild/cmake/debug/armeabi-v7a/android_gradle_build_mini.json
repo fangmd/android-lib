@@ -1,16 +1,16 @@
 {
   "buildFiles": [
-    "/Users/double/work/njjr/project/android-library/encryptionlib/CMakeLists.txt"
+    "/Users/double/work/njjr/01.project/android-library/encryptionlib/CMakeLists.txt"
   ],
   "cleanCommands": [
-    "/Users/double/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/double/work/njjr/project/android-library/encryptionlib/.externalNativeBuild/cmake/debug/armeabi-v7a --target clean"
+    "/Users/double/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/double/work/njjr/01.project/android-library/encryptionlib/.externalNativeBuild/cmake/debug/armeabi-v7a --target clean"
   ],
   "libraries": {
     "aes_jni-Debug-armeabi-v7a": {
       "artifactName": "aes_jni",
-      "buildCommand": "/Users/double/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/double/work/njjr/project/android-library/encryptionlib/.externalNativeBuild/cmake/debug/armeabi-v7a --target aes_jni",
+      "buildCommand": "/Users/double/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/double/work/njjr/01.project/android-library/encryptionlib/.externalNativeBuild/cmake/debug/armeabi-v7a --target aes_jni",
       "abi": "armeabi-v7a",
-      "output": "/Users/double/work/njjr/project/android-library/encryptionlib/build/intermediates/cmake/debug/obj/armeabi-v7a/libaes_jni.so"
+      "output": "/Users/double/work/njjr/01.project/android-library/encryptionlib/build/intermediates/cmake/debug/obj/armeabi-v7a/libaes_jni.so"
     }
   }
 }

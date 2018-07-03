@@ -5,6 +5,7 @@ include ':app', ':analysislib', ':netlib', ':sharelib',
         ':matisse',
         ':imagelib',
         ':webviewlib',
-        ':encryptionlib'
+        ':encryptionlib',
+        'address_selector'
 
 
