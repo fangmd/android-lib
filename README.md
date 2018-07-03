@@ -37,7 +37,7 @@ manifest merge fail 错误修复：
 
 介绍：Fabric 崩溃收集
 
->Fabric 库下载失败 read timed out
+相关项目：旺财谷5.5
 
 # OpenSourceLib
 
@@ -54,10 +54,13 @@ manifest merge fail 错误修复：
 
 >JSBridge github 上反馈有很多bug
 
+相关项目：旺财谷5.5
+
 # 图片加载库
 
 介绍：基于 glide 的图片加载库
 
+相关项目：旺财谷5.5
 
 # 分享库
 
@@ -74,6 +77,7 @@ umeng 统计
 
 >待处理：ga, TalkingData
 
+相关项目：旺财谷5.5
 
 # 加密库
 
@@ -91,3 +95,4 @@ umeng 统计
 >需要优化：增加 可以设置层级的设置
 
 
+相关项目：旺财谷5.5
