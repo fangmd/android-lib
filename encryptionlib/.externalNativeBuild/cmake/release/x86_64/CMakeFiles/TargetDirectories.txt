@@ -1,3 +1,0 @@
-/Users/double/work/njjr/01.project/android-library/encryptionlib/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/edit_cache.dir
-/Users/double/work/njjr/01.project/android-library/encryptionlib/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/rebuild_cache.dir
-/Users/double/work/njjr/01.project/android-library/encryptionlib/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/aes_jni.dir

@@ -1,4 +1,0 @@
-# ninja log v5
-0	96	0	CMakeFiles/aes_jni.dir/src/main/cpp/main.c.o	bd1a2f948fcb01ce
-0	576	0	CMakeFiles/aes_jni.dir/src/main/cpp/aes/aes.c.o	927d85a272b7db8
-576	608	0	../../../../build/intermediates/cmake/release/obj/x86/libaes_jni.so	7ec7deb3ff002a5
