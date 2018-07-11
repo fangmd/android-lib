@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ProgressBar;
 
 import com.lhjx.webviewlib.jsbridge.BridgeWebView;
+import com.lhjx.webviewlib.jsbridge.BridgeWebViewClient;
 import com.tencent.smtt.sdk.WebChromeClient;
 import com.tencent.smtt.sdk.WebSettings;
 import com.tencent.smtt.sdk.WebView;
@@ -111,13 +112,18 @@ public class MyWebViewJsBridge extends BridgeWebView {
         webSetting.setUserAgentString(newUA);
     }
 
-    private WebViewClient mWebViewClient = new WebViewClient() {
+    private WebViewClient mWebViewClient = new BridgeWebViewClient(this) {
 
         /**
          * 防止加载网页时调起系统浏览器
          */
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
+            boolean jsBridgeHandle = super.shouldOverrideUrlLoading(view, url);
+            if (jsBridgeHandle) {
+                // js bridge 处理了
+                return true;
+            }
             if (UrlFilter.dealUrl(view.getContext(), url)) {
                 // 拦截url
                 return true;
