@@ -1,0 +1,7 @@
+ext {
+    PUBLISH_GROUP_ID = 'com.lhjx.loglib'
+    PUBLISH_ARTIFACT_ID = 'loglib'
+    PUBLISH_VERSION = '1.0.0'
+}
+
+
