@@ -1,4 +1,4 @@
-include ':app', ':analysislib', ':netlib', ':sharelib', ':loglib',
+include ':app', ':analysislib', ':netlib', ':sharelib', ':loglib', ':testdialog',
         ':opensourcelib',
         ':crashlib',
         ':pushlib',
