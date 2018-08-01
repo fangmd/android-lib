@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
 //        testPush();
 
-        TestDialogHelper.setUp(this, new ITestDialog() {
+        TestDialogHelper.setUp(this, "", new ITestDialog() {
             @Override
             public void onResult(String result) {
                 Log.d(TAG, "onResult: " + result);

@@ -15,10 +15,13 @@ import android.widget.EditText;
  */
 public class TestDialogFragment extends DialogFragment {
 
+    private static final String MSG = "msg";
+
     private ITestDialog mITestDialog;
 
-    public static TestDialogFragment newInstance() {
+    public static TestDialogFragment newInstance(String defaultValue) {
         Bundle args = new Bundle();
+        args.putString(MSG, defaultValue);
         TestDialogFragment fragment = new TestDialogFragment();
         fragment.setArguments(args);
         return fragment;
@@ -31,9 +34,13 @@ public class TestDialogFragment extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
+        Bundle arguments = getArguments();
+        String msg = arguments.getString(MSG, "");
         Context context = getContext();
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         final EditText et = new EditText(context);
+        et.setText(msg);
+        et.setSelection(msg.length());
 
         builder.setView(et);
         builder.setTitle("修改网络");
@@ -51,7 +58,8 @@ public class TestDialogFragment extends DialogFragment {
                 dismiss();
             }
         });
-        builder.setCancelable(false);
+        setCancelable(false);
+
         return builder.create();
     }
 }

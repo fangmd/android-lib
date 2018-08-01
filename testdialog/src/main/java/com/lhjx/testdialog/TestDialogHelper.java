@@ -15,7 +15,7 @@ import android.widget.FrameLayout;
  */
 public class TestDialogHelper {
 
-    public static void setUp(final AppCompatActivity activity, final ITestDialog listener) {
+    public static void setUp(final AppCompatActivity activity, final String defaultValue, final ITestDialog listener) {
         FrameLayout fl = (FrameLayout) activity.getWindow().getDecorView().findViewById(android.R.id.content);
 
         Button btn = new Button(activity);
@@ -36,11 +36,15 @@ public class TestDialogHelper {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TestDialogFragment testDialogFragment = TestDialogFragment.newInstance();
+                TestDialogFragment testDialogFragment = TestDialogFragment.newInstance(defaultValue);
                 testDialogFragment.setITestDialog(listener);
                 testDialogFragment.show(activity.getSupportFragmentManager(), "TestDialogHelper");
             }
         });
+    }
+
+    public static void setUp(final AppCompatActivity activity, final ITestDialog listener) {
+        setUp(activity, "", listener);
     }
 
     private static int dp2px(Context context, int dp) {
