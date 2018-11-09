@@ -1,4 +1,14 @@
 
+# ChangLog
+
+## 1.0.2
+
+1. upgrade glide 4.6.1 -> 4.8.0
+2. upgrade glide-transform 3.1.1 -> 3.3.0
+3. 修改 缓存存储位置
+
+## 1.0.1
+
 
 # Glide 简单封装
 

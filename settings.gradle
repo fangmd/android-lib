@@ -1,11 +1,11 @@
 include ':app', ':analysislib', ':netlib', ':sharelib', ':loglib', ':testdialog',
         ':opensourcelib',
         ':crashlib',
-        ':pushlib',
+//        ':pushlib',
         ':matisse',
         ':imagelib',
         ':webviewlib',
-        ':encryptionlib',
+//        ':encryptionlib',
         'address_selector'
 
 

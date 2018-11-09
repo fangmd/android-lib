@@ -3,12 +3,14 @@ package com.lhjx.androidlibrary;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 
+import com.lhjx.androidlibrary.imgload.ImageActivity;
 import com.lhjx.testdialog.ITestDialog;
 import com.lhjx.testdialog.TestDialogHelper;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String TAG = MainActivity.class.getSimpleName();
 
@@ -26,6 +28,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        findViewById(R.id.btn_img).setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btn_img:
+                ImageActivity.start(this);
+                break;
+        }
     }
 
 //    private void testPush() {

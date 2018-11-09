@@ -2,7 +2,7 @@ apply plugin: 'maven-publish'
 apply plugin: 'com.jfrog.bintray'
 
 // *版本号*
-version '1.0.1'
+version '1.0.2'
 group 'com.lhjx'
 
 publishing {

@@ -2,8 +2,6 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 27
-    buildToolsVersion '27.0.3'
-
 
     defaultConfig {
         minSdkVersion 16
@@ -28,11 +26,19 @@ dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
 
     //信鸽jar , wup包, mid包
-    api 'com.tencent.xinge:xinge:3.2.3-release'
-    api 'com.tencent.wup:wup:1.0.0.E-release'
-    api 'com.tencent.mid:mid:4.0.6-release'
-    api 'com.tencent.xinge:xghw:2.5.2.300-release'
-    api 'com.tencent.xinge:xgmz:3.2.2-release'
-    api 'com.tencent.xinge:mipush:3.2.2-release'
+//    api 'com.tencent.xinge:xinge:3.2.3-release'
+//    api 'com.tencent.wup:wup:1.0.0.E-release'
+//    api 'com.tencent.mid:mid:4.0.6-release'
+//    api 'com.tencent.xinge:xghw:2.5.2.300-release'
+//    api 'com.tencent.xinge:xgmz:3.2.2-release'
+//    api 'com.tencent.xinge:mipush:3.2.2-release'
+
+    //信鸽jar，不包含厂商通道
+//    compile  'com.tencent.xinge:xinge:4.0.3-release'
+    //信鸽jar，包含厂商通道
+//    api 'com.tencent.xinge:xinge:4.0.3-otherpush-release'
+//    api 'com.tencent.jg:jg:1.1'
+//    api 'com.tencent.wup:wup:1.0.0.E-release'
+//    api 'com.tencent.mid:mid:4.0.7'
 
 }

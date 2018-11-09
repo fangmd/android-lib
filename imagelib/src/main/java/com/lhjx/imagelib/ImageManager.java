@@ -290,21 +290,19 @@ public class ImageManager {
         GlideApp.get(context).clearDiskCache();
     }
 
-
-    // ************************ test *************************************
-
     /**
      * 加载圆角图片
      */
     public static void loadRoundedCornersImg(Context context, String url, ImageView target, int radius) {
-
         GlideApp.with(context)
                 .load(url)
-//                .placeholder(R.drawable.recommender_avatar_default)
-//                .error(R.drawable.recommender_avatar_default)
-                .transform(new RoundedCorners(radius)) // 40
+                .placeholder(PLACE_HOLDER)
+                .error(LOAD_ERROR)
+                .transform(new RoundedCorners(radius))
                 .into(target);
     }
+
+    // ************************ test *************************************
 
     @SuppressLint("CheckResult")
     public static void load(Context context, String url, ImageView iv, final IImageLoadListener listener) {
