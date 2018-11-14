@@ -1,6 +1,11 @@
 
 # ChangLog
 
+## 1.0.3
+
+1. 增加 load Drawable 资源函数
+2. 增加 load File 资源函数
+
 ## 1.0.2
 
 1. upgrade glide 4.6.1 -> 4.8.0

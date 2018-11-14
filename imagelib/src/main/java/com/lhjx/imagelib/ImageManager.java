@@ -20,6 +20,8 @@ import com.bumptech.glide.request.target.Target;
 import com.lhjx.imagelib.progress.ProgressInterceptor;
 import com.lhjx.imagelib.progress.ProgressListener;
 
+import java.io.File;
+
 
 /**
  * 图片加载管理类
@@ -55,6 +57,41 @@ public class ImageManager {
 
 
     // Simple load -------------------------------------------------------
+
+    /**
+     * load drawable
+     */
+    public static void load(Context context, @DrawableRes int drawable, ImageView iv) {
+        GlideApp.with(context)
+                .load(drawable)
+                .fitCenter()
+                .into(iv);
+    }
+
+    public static void load(Context context, File file, ImageView iv) {
+        load(context, file, iv, CropType.FIT_CROP);
+    }
+
+    public static void load(Context context, File file, ImageView iv, @CropType int cropType) {
+        GlideRequest<Drawable> request = GlideApp.with(context)
+                .load(file);
+        switch (cropType) {
+            case CropType.CENTER_CROP:
+                request.centerCrop();
+                break;
+            case CropType.FIT_CROP:
+                request.fitCenter();
+                break;
+            case CropType.CENTER_INSIDE:
+                request.centerInside();
+            case CropType.NONE:
+                break;
+            default:
+                Log.e(TAG, "load: error crop type");
+                break;
+        }
+        request.into(iv);
+    }
 
     /**
      * Simple load
@@ -106,9 +143,6 @@ public class ImageManager {
     }
 
     private static void load(GlideRequests with, String url, ImageView iv, @DrawableRes int placeHolder, @DrawableRes int error, @CropType int cropType) {
-//        GlideRequest<Drawable> error1 = with.load(url)
-//                .placeholder(placeHolder)
-//                .error(error);
         GlideRequest<Drawable> request = with
 //                .asBitmap()
                 .load(url)
@@ -234,9 +268,9 @@ public class ImageManager {
      * 下载图片,耗时操作不能放在主线程中进行
      * 下载的图片地址在：文件名：{@link MyGlideModule#CACHE_FILE_NAME}
      *
-     * @param context
-     * @param url
-     * @param imageDownloadListener
+     * @param context               context
+     * @param url                   url
+     * @param imageDownloadListener Listener
      */
     public static void downloadImage(Context context, String url, final IImageDownloadListener imageDownloadListener) {
         try {
