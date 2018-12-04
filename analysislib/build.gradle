@@ -28,10 +28,9 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     //umeng
-    api 'com.umeng.sdk:common:1.5.0'
-    api 'com.umeng.sdk:analytics:7.5.0'
-    api 'com.umeng.sdk:utdid:1.1.5.3'
-    debugApi 'com.umeng.sdk:debug:1.0.0'
+    api 'com.umeng.umsdk:common:1.5.4'
+    api 'com.umeng.umsdk:analytics:7.5.4'
+    api 'com.umeng.umsdk:utdid:1.1.5.3'
 }
 
 // 手动上传
