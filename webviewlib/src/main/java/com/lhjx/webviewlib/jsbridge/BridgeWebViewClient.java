@@ -2,7 +2,9 @@ package com.lhjx.webviewlib.jsbridge;
 
 import android.graphics.Bitmap;
 import android.os.Build;
+import android.util.Log;
 
+import com.lhjx.webviewlib.JSBridgeTag;
 import com.tencent.smtt.sdk.WebView;
 import com.tencent.smtt.sdk.WebViewClient;
 
@@ -74,6 +76,7 @@ public class BridgeWebViewClient extends WebViewClient {
 
         if (BridgeWebView.toLoadJs != null) {
             BridgeUtil.webViewLoadLocalJs(view, BridgeWebView.toLoadJs);
+            Log.d(JSBridgeTag.JS_TAG, "onPageFinished: inject js");
         }
 
         //

@@ -2,12 +2,10 @@ package com.lhjx.androidlibrary;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 
 import com.lhjx.androidlibrary.imgload.ImageActivity;
-import com.lhjx.testdialog.ITestDialog;
-import com.lhjx.testdialog.TestDialogHelper;
+import com.lhjx.androidlibrary.weblib.WebActivity;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -21,15 +19,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 //        testPush();
 
-        TestDialogHelper.setUp(this, "", new ITestDialog() {
-            @Override
-            public void onResult(String result) {
-                Log.d(TAG, "onResult: " + result);
-            }
-        });
+//        TestDialogHelper.setUp(this, "", new ITestDialog() {
+//            @Override
+//            public void onResult(String result) {
+//                Log.d(TAG, "onResult: " + result);
+//            }
+//        });
 
 
         findViewById(R.id.btn_img).setOnClickListener(this);
+        findViewById(R.id.btn_web).setOnClickListener(this);
+
+
     }
 
     @Override
@@ -37,6 +38,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.btn_img:
                 ImageActivity.start(this);
+                break;
+            case R.id.btn_web:
+                WebActivity.start(this);
                 break;
         }
     }

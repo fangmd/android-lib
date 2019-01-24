@@ -1,11 +1,16 @@
-include ':app', ':analysislib', ':netlib', ':sharelib', ':loglib', ':testdialog',
-        ':opensourcelib',
-        ':crashlib',
+include ':app',
+//        ':analysislib',
+//        ':netlib',
+//        ':sharelib',
+        ':loglib',
+//        ':testdialog',
+//        ':opensourcelib',
+//        ':crashlib',
 //        ':pushlib',
-        ':matisse',
+//        ':matisse',
         ':imagelib',
-        ':webviewlib',
+        ':webviewlib'
 //        ':encryptionlib',
-        'address_selector'
+//        'address_selector'
 
 
