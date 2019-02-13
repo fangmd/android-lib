@@ -2,6 +2,17 @@
 
 # changelog
 
+## 1.1.0
+
+友盟升级
+
+```
+api 'com.umeng.umsdk:utdid:1.1.5.3'
+api  'com.umeng.umsdk:analytics:8.0.0'
+api  'com.umeng.umsdk:common:2.0.0'
+```
+
+
 ## 1.0.1
 
 ```
