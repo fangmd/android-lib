@@ -1,4 +1,16 @@
 
+
+# v2.0.1
+
+JSBridge 版本：2018/6/1
+
+X5WebView 版本：3.6.0.1371_43624_xxxx_20181106_121046
+
+## changelog
+
+1. 升级 X5WebView
+
+
 # v2.0.0
 
 X5WebView + JSBridge 库

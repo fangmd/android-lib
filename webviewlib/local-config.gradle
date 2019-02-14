@@ -2,7 +2,7 @@ ext {
     PUBLISH_GROUP_ID = 'com.lhjx.webviewlib'
     PUBLISH_ARTIFACT_ID = 'webviewlib'
     // *版本号*
-    PUBLISH_VERSION = '2.0.0'
+    PUBLISH_VERSION = '2.0.1'
 }
 
 
