@@ -20,6 +20,8 @@ import java.util.HashMap;
  */
 public class WebViewUtils {
 
+    public static boolean sIsDEBUG = false;
+
     /**
      * 初始化，设置要注入的 js
      *
@@ -43,6 +45,11 @@ public class WebViewUtils {
     private static boolean checkAssetsFile(Application application, String jsFileName) {
         String s = BridgeUtil.assetFile2Str(application, jsFileName);
         return !TextUtils.isEmpty(s);
+    }
+
+    public static void init(Application application, boolean isDEBUG) {
+        init(application);
+        sIsDEBUG = isDEBUG;
     }
 
     /**

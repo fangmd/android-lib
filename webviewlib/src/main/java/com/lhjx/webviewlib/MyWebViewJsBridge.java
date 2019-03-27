@@ -2,6 +2,7 @@ package com.lhjx.webviewlib;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.os.Build;
 import android.support.annotation.DrawableRes;
 import android.util.AttributeSet;
 import android.view.View;
@@ -45,14 +46,17 @@ public class MyWebViewJsBridge extends BridgeWebView {
     }
 
     private void initView() {
-        if (mShowProgressBar) {
-            addProgressBar();
-        }
         initWebViewSettings();
     }
 
     @SuppressLint("SetJavaScriptEnabled")
     private void initWebViewSettings() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT && WebViewUtils.sIsDEBUG) {
+            setWebContentsDebuggingEnabled(true);
+        } else {
+            setWebContentsDebuggingEnabled(false);
+        }
+
         setBackgroundColor(getResources().getColor(android.R.color.white));
         setWebViewClient(getCustomWebViewClient());
         setWebChromeClient(getChromeClient());
@@ -63,7 +67,7 @@ public class MyWebViewJsBridge extends BridgeWebView {
         webSetting.setDisplayZoomControls(false);
         webSetting.setJavaScriptCanOpenWindowsAutomatically(true);
         webSetting.setDomStorageEnabled(true);
-        webSetting.setAllowFileAccess(true);
+        webSetting.setAllowFileAccess(false);
         webSetting.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NARROW_COLUMNS);
         webSetting.setSupportZoom(false);
         webSetting.setUseWideViewPort(true);
@@ -87,7 +91,7 @@ public class MyWebViewJsBridge extends BridgeWebView {
     }
 
     private WebViewClient getCustomWebViewClient() {
-        return mWebViewClient;
+        return new MyWebViewClient(this);
     }
 
     private WebChromeClient getChromeClient() {
@@ -112,7 +116,11 @@ public class MyWebViewJsBridge extends BridgeWebView {
         webSetting.setUserAgentString(newUA);
     }
 
-    private WebViewClient mWebViewClient = new BridgeWebViewClient(this) {
+    public class MyWebViewClient extends BridgeWebViewClient {
+
+        public MyWebViewClient(BridgeWebView webView) {
+            super(webView);
+        }
 
         /**
          * 防止加载网页时调起系统浏览器
@@ -126,6 +134,9 @@ public class MyWebViewJsBridge extends BridgeWebView {
             }
             if (UrlFilter.dealUrl(view.getContext(), url)) {
                 // 拦截url
+                return true;
+            }
+            if (shouldOverrideUrlLoading2(view, url)) {
                 return true;
             }
             view.loadUrl(url);
@@ -146,18 +157,18 @@ public class MyWebViewJsBridge extends BridgeWebView {
             super.onPageFinished(webView, s);
             showPageLoadFinish();
         }
-    };
+
+    }
 
 
     private WebChromeClient mChromeClient = new WebChromeClient() {
-
 
         /**
          * 网页加载进度监听
          */
         @Override
         public void onProgressChanged(WebView webView, int progress) {
-            if (!mShowProgressBar) {
+            if (!mShowProgressBar || mProgressBar == null) {
                 return;
             }
             if (progress == 100) {
@@ -180,6 +191,13 @@ public class MyWebViewJsBridge extends BridgeWebView {
         }
     }
 
+    private boolean shouldOverrideUrlLoading2(WebView view, String url) {
+        if (mMyWebViewListener != null) {
+            return mMyWebViewListener.shouldOverrideUrlLoading2(view, url);
+        }
+        return false;
+    }
+
     private void showErrorPage() {
         if (mMyWebViewListener != null) {
             mMyWebViewListener.showErrorPage();
@@ -194,30 +212,32 @@ public class MyWebViewJsBridge extends BridgeWebView {
         mMyWebViewListener = myWebViewListener;
     }
 
-    /**
-     * 设置 loading 颜色
-     *
-     * @return drawable
-     */
-    protected @DrawableRes
-    int getLoadingDrawable() {
-        return R.drawable.bg_pb_web_loading;
+    // ------------- progress --------------
+    public void setShowProgressBar(boolean showProgressBar) {
+        setShowProgressBar(showProgressBar, R.drawable.bg_pb_web_loading);
+    }
+
+    public void setShowProgressBar(boolean showProgressBar, @DrawableRes int drawable) {
+        mShowProgressBar = showProgressBar;
+        if (mShowProgressBar) {
+            addProgressBar(drawable);
+        }
     }
 
     /**
      * 添加进度条
+     *
+     * @param drawable 进度条颜色
      */
-    public void addProgressBar() {
+    private void addProgressBar(@DrawableRes int drawable) {
         mProgressBar = new ProgressBar(getContext(), null,
                 android.R.attr.progressBarStyleHorizontal);
         mProgressBar.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, 5));
-        mProgressBar.setProgressDrawable(getContext().getResources().getDrawable(getLoadingDrawable()));
+        mProgressBar.setProgressDrawable(getContext().getResources().getDrawable(drawable));
 
         addView(mProgressBar);
     }
+    // ------------- progress --------------
 
-    public void setShowProgressBar(boolean showProgressBar) {
-        mShowProgressBar = showProgressBar;
-    }
 
 }
