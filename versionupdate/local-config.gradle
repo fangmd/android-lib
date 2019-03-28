@@ -1,0 +1,7 @@
+ext {
+    PUBLISH_GROUP_ID = 'com.lhjx.versionupdate'
+    PUBLISH_ARTIFACT_ID = 'versionupdate'
+    PUBLISH_VERSION = '1.0.0'
+}
+
+

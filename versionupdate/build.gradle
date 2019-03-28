@@ -1,13 +1,13 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
 
 
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 27
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
 
@@ -26,10 +26,7 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    //umeng
-    api 'com.umeng.umsdk:utdid:1.1.5.3'
-    api 'com.umeng.umsdk:analytics:8.0.0'
-    api 'com.umeng.umsdk:common:2.0.0'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
 }
 
 // 手动上传
