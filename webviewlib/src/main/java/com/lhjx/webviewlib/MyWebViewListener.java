@@ -8,7 +8,7 @@ import com.tencent.smtt.sdk.WebView;
  */
 public interface MyWebViewListener {
 
-    void showErrorPage();
+    void showErrorPage(WebView view, String url);
 
     void hideErrorPage();
 

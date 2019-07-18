@@ -1,5 +1,9 @@
 
 
+# v2.0.2
+
+优化： onReceivedError，方便使用自定义 scheme
+
 # v2.0.1
 
 JSBridge 版本：2018/6/1

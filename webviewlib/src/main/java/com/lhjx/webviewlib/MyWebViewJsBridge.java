@@ -148,8 +148,8 @@ public class MyWebViewJsBridge extends BridgeWebView {
          */
         @Override
         public void onReceivedError(WebView webView, int i, String s, String s1) {
+            showErrorPage(webView, s1);
             super.onReceivedError(webView, i, s, s1);
-            showErrorPage();
         }
 
         @Override
@@ -198,9 +198,9 @@ public class MyWebViewJsBridge extends BridgeWebView {
         return false;
     }
 
-    private void showErrorPage() {
+    private void showErrorPage(WebView webView, String url) {
         if (mMyWebViewListener != null) {
-            mMyWebViewListener.showErrorPage();
+            mMyWebViewListener.showErrorPage(webView, url);
         }
     }
 
