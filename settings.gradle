@@ -1,5 +1,5 @@
 include ':app',
-        ':analysislib',
+//        ':analysislib',
 //        ':netlib',
 //        ':sharelib',
         ':loglib',
@@ -9,8 +9,8 @@ include ':app',
 //        ':pushlib',
 //        ':matisse',
         ':imagelib',
-        ':webviewlib',
-        ':versionupdate'
+        ':webviewlib'
+//        ':versionupdate'
 //        ':encryptionlib',
 //        'address_selector'
 

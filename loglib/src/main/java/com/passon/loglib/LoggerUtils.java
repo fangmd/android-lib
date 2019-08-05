@@ -1,4 +1,4 @@
-package com.lhjx.loglib;
+package com.passon.loglib;
 
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.Logger;
@@ -13,7 +13,7 @@ public class LoggerUtils {
     private static boolean DEBUG = false;
 
     public static void init(boolean debug) {
-        init("lhjx", debug);
+        init("passon", debug);
     }
 
     public static void init(String tag, final boolean debug) {
@@ -49,7 +49,7 @@ public class LoggerUtils {
 
     public static void w(String s) {
         if (DEBUG) {
-            LoggerUtils.w(s);
+            Logger.w(s);
         }
     }
 
@@ -93,7 +93,6 @@ public class LoggerUtils {
             Logger.d(s);
         }
     }
-
 
     public static void d(String tag, String s) {
         if (DEBUG) {

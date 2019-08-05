@@ -8,7 +8,7 @@ import android.text.TextUtils;
 import com.lhjx.androidlibrary.R;
 import com.lhjx.androidlibrary.TagConstants;
 import com.lhjx.androidlibrary.utils.ToastUtils;
-import com.lhjx.loglib.LoggerUtils;
+import com.passon.loglib.LoggerUtils;
 import com.lhjx.webviewlib.jsbridge.BridgeHandler;
 import com.lhjx.webviewlib.jsbridge.BridgeWebView;
 import com.lhjx.webviewlib.jsbridge.CallBackFunction;

@@ -17,9 +17,9 @@ android {
         ]
 
 
-        ndk {
-            abiFilters 'armeabi'
-        }
+//        ndk {
+//            abiFilters 'armeabi'
+//        }
 
 
     }

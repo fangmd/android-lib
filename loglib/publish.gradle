@@ -3,13 +3,13 @@ apply plugin: 'com.jfrog.bintray'
 
 // *版本号*
 version '1.0.0'
-group 'com.lhjx'
+group 'com.passon'
 
 publishing {
     publications {
         Production(MavenPublication) {
             artifact("$buildDir/outputs/aar/imagelib-release.aar")
-            groupId 'com.lhjx'
+            groupId 'com.passon'
             artifactId 'loglib'
             version this.version
 

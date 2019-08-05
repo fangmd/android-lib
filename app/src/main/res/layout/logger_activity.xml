@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".logger.LoggerActivity">
+
+    <Button
+        android:id="@+id/btn_logger_d"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Debug D"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+        android:id="@+id/btn_logger_w"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Debug Warn"/>
+
+</LinearLayout>

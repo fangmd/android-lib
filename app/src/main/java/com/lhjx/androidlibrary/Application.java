@@ -1,6 +1,7 @@
 package com.lhjx.androidlibrary;
 
 import com.lhjx.webviewlib.WebViewUtils;
+import com.passon.loglib.LoggerUtils;
 
 /**
  * Author: Created by fangmingdong on 2019/1/24-3:23 PM
@@ -21,6 +22,13 @@ public class Application extends android.app.Application {
         //        WebViewUtils.init(this, "AppJSBridge_android.js"); // 可用, JS Call Native, Native Call JS, 注入时间问题：需要网页在 200ms 后再调用初始化相关代码
 
         //todo: 兼容性测试
+
+
+        initLogger();
+    }
+
+    private void initLogger() {
+        LoggerUtils.init(BuildConfig.DEBUG);
     }
 
 

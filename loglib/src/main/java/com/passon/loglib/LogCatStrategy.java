@@ -1,4 +1,4 @@
-package com.lhjx.loglib;
+package com.passon.loglib;
 
 import android.util.Log;
 
