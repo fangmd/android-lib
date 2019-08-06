@@ -5,9 +5,8 @@
 2. `README.md` 文件需要包含以下内容：Module 介绍，使用和集成方法，已知 bug ，历史更新记录，proguard rule
 3. 主工程中写测试代码
 4. 命名规则：moduleName + lib
-5. 包名：com.lhjx.xxxx
+5. 包名：com.passon.xxxx
 
->下面列举了最近工作涉及到的库，其他的大家可以补充
 
 # 注意
 
@@ -18,94 +17,9 @@ manifest merge fail 错误修复：
 ```
 
 
-# release
-
-文件夹存放历史版本包。
-
->这里保存的版本代码都是已经在项目中使用的。
-
-
-# PushLibrary
-
-介绍：推送库
-
-相关项目：温度金服（已集成，未上线）
-
->备注：魅族渠道待测试
-
-# CrashCollection
-
-介绍：Fabric 崩溃收集
-
-相关项目：旺财谷5.5
-
-# OpenSourceLib
-
-介绍：存放不需要封装的公共第三方库
-
-
-# 图片视频选择库
-
-介绍：基于知乎图库的图片视频选择库
-
-# X5WebView + JsBridge 库
-
-介绍：腾讯 X5WebView 和 JsBridge 库结合
-
->JSBridge github 上反馈有很多bug
-
-相关项目：旺财谷5.5
-
-# 图片加载库
-
-介绍：基于 glide 的图片加载库
-
-相关项目：旺财谷5.5
-
-# 分享库
-
-友盟分享
-
-# 网络库
-
-介绍：RxJava + Retrofit + OkHttp
-
-
-# 统计库 AnalysisLib
-
-umeng 统计
-
->待处理：ga, TalkingData
-
-相关项目：旺财谷5.5
-
-# 加密库
-
-介绍：文件，字符串 加密库
-
->目前只支持字符串加解密
-
-
-# 应用更新库
-
-
-
-# 地址选择库 address_selector
-
->需要优化：增加 可以设置层级的设置
-
-
-相关项目：旺财谷5.5
-
 # 日志库 LogLib
 
 日志库基于 Logger 库封装
 
-# TestDialog 测试弹窗
 
-介绍：给 Activity 添加一个按钮，点击按钮后出现一个输入框。
-
-作用：修改项目的接口地址
-
-相关项目：南金中心，南金泉
 

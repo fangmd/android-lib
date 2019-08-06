@@ -1,0 +1,23 @@
+package com.passon.webviewlib;
+
+
+import android.webkit.WebView;
+
+/**
+ * Author: Created by fangmingdong on 2018/4/24-下午2:11
+ * Description:
+ */
+public interface MyWebViewListener {
+
+    void showErrorPage(WebView view, String url);
+
+    void hideErrorPage();
+
+    void showPageLoadFinish();
+
+    /**
+     * 是否拦截 url
+     * @return false: 不拦截，true: 拦截
+     */
+    boolean shouldOverrideUrlLoading2(WebView view, String url);
+}

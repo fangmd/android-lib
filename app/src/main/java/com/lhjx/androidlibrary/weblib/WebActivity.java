@@ -6,16 +6,17 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebView;
 
 import com.lhjx.androidlibrary.R;
 import com.lhjx.androidlibrary.utils.SystemUtils;
 import com.lhjx.androidlibrary.utils.ToastUtils;
 import com.lhjx.androidlibrary.weblib.js.JSUtils;
 import com.lhjx.androidlibrary.weblib.js.JsConstants;
-import com.lhjx.webviewlib.MyWebViewJsBridge;
-import com.lhjx.webviewlib.WebViewUtils;
-import com.lhjx.webviewlib.jsbridge.BridgeWebChromeClient;
-import com.tencent.smtt.sdk.WebView;
+import com.passon.loglib.LoggerUtils;
+import com.passon.webviewlib.MyWebViewJsBridge;
+import com.passon.webviewlib.WebViewUtils;
+import com.passon.webviewlib.jsbridge.BridgeWebChromeClient;
 
 public class WebActivity extends AppCompatActivity implements JSUtils.JSCallBack, View.OnClickListener {
 
@@ -39,7 +40,7 @@ public class WebActivity extends AppCompatActivity implements JSUtils.JSCallBack
         JSUtils.setUpWebView(mWebView, this);
         mWebView.setWebChromeClient(new BridgeWebChromeClient());
 
-        mWebView.loadUrl("http://192.168.10.66:8000/");
+        mWebView.loadUrl("http://192.168.10.83:8000?" + Math.random());
 //        mWebView.loadUrl("http://baidu.com/");
 
     }
@@ -51,7 +52,6 @@ public class WebActivity extends AppCompatActivity implements JSUtils.JSCallBack
     }
 
     public String generateCustomUserAgent(WebView webView) {
-
         return webView.getSettings().getUserAgentString()
                 + "versioncode=" + SystemUtils.getVersionCode(webView.getContext())
                 + "/wcgAndroid/" + SystemUtils.getVersionName(webView.getContext());
@@ -80,7 +80,7 @@ public class WebActivity extends AppCompatActivity implements JSUtils.JSCallBack
 
     @Override
     public void call(String tel) {
-        ToastUtils.show(this, tel);
+        LoggerUtils.d("JS Call native: tell:" + tel);
     }
 
     @Override
@@ -122,8 +122,8 @@ public class WebActivity extends AppCompatActivity implements JSUtils.JSCallBack
 
     @Override
     public void onClick(View v) {
-        //右上角图片 或文字点击
         mWebView.callHandler(JsConstants.TITLE_RIGHT_CLICK, "", data -> {
+
         });
     }
 }

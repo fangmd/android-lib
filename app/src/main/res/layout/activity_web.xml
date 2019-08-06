@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".weblib.WebActivity">
 
-    <com.lhjx.webviewlib.MyWebViewJsBridge
+    <com.passon.webviewlib.MyWebViewJsBridge
         android:id="@+id/webview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
@@ -16,6 +16,8 @@
         android:id="@+id/btn_call_js"
         android:layout_width="200dp"
         android:layout_height="80dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="400dp"
         android:text="Call JS"
         android:textAllCaps="false"/>
 

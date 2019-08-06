@@ -9,9 +9,9 @@ import com.lhjx.androidlibrary.R;
 import com.lhjx.androidlibrary.TagConstants;
 import com.lhjx.androidlibrary.utils.ToastUtils;
 import com.passon.loglib.LoggerUtils;
-import com.lhjx.webviewlib.jsbridge.BridgeHandler;
-import com.lhjx.webviewlib.jsbridge.BridgeWebView;
-import com.lhjx.webviewlib.jsbridge.CallBackFunction;
+import com.passon.webviewlib.jsbridge.BridgeHandler;
+import com.passon.webviewlib.jsbridge.BridgeWebView;
+import com.passon.webviewlib.jsbridge.CallBackFunction;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -22,7 +22,6 @@ import org.json.JSONObject;
  * Description:
  */
 public class JSUtils {
-
 
     public static void setUpWebView(BridgeWebView webView, final JSCallBack jsCallBack) {
         setTitle(webView, jsCallBack);

@@ -1,8 +1,8 @@
 ext {
-    PUBLISH_GROUP_ID = 'com.lhjx.webviewlib'
+    PUBLISH_GROUP_ID = 'com.passon.webviewlib'
     PUBLISH_ARTIFACT_ID = 'webviewlib'
     // *版本号*
-    PUBLISH_VERSION = '2.0.2'
+    PUBLISH_VERSION = '3.0.0'
 }
 
 
