@@ -1,4 +1,4 @@
-package com.lhjx.imagelib;
+package com.passon.imagelib;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -17,8 +17,9 @@ import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
-import com.lhjx.imagelib.progress.ProgressInterceptor;
-import com.lhjx.imagelib.progress.ProgressListener;
+import com.lhjx.imagelib.R;
+import com.passon.imagelib.progress.ProgressInterceptor;
+import com.passon.imagelib.progress.ProgressListener;
 
 import java.io.File;
 

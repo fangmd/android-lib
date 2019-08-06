@@ -7,7 +7,7 @@ package com.lhjx.androidlibrary;
 public class MockData {
 
     public static String getImg() {
-        return "https://img.ithome.com/newsuploadfiles/2018/11/20181109062634_6641.jpg";
+        return "https://img.ithome.com/newsuploadfiles/2019/8/20190805_072602_584.jpg";
     }
 
     public static String getImgRound() {

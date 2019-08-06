@@ -1,4 +1,4 @@
-package com.lhjx.imagelib;
+package com.passon.imagelib;
 
 import android.graphics.Bitmap;
 

@@ -1,4 +1,4 @@
-package com.lhjx.imagelib;
+package com.passon.imagelib;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -12,7 +12,7 @@ import com.bumptech.glide.load.engine.cache.ExternalPreferredCacheDiskCacheFacto
 import com.bumptech.glide.load.engine.cache.LruResourceCache;
 import com.bumptech.glide.load.model.GlideUrl;
 import com.bumptech.glide.module.AppGlideModule;
-import com.lhjx.imagelib.progress.ProgressInterceptor;
+import com.passon.imagelib.progress.ProgressInterceptor;
 
 import java.io.InputStream;
 
@@ -23,7 +23,6 @@ import okhttp3.OkHttpClient;
  * Glide 配置类
  * Created by double on 2017/8/1.
  */
-
 @GlideModule
 public class MyGlideModule extends AppGlideModule {
 
@@ -41,8 +40,9 @@ public class MyGlideModule extends AppGlideModule {
         builder.setMemoryCache(new LruResourceCache(memoryCacheSizeBytes));
 
         // 设置磁盘缓存及其路径
-        int MAX_CACHE_SIZE = 100 * 1024 * 1024;
+        int MAX_CACHE_SIZE = 100 * 1024 * 1024; // 100MB
 
+        // 优先存储在 应用外部文件夹内 sdcard/Android/data/<application package>/cache/imgCache
         builder.setDiskCache(new ExternalPreferredCacheDiskCacheFactory(context, CACHE_FILE_NAME, MAX_CACHE_SIZE));
     }
 

@@ -21,5 +21,8 @@ manifest merge fail 错误修复：
 
 日志库基于 Logger 库封装
 
+# 日志库 WebViewLib
+
+WebView + JSBridge
 
 

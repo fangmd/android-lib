@@ -1,4 +1,4 @@
-package com.lhjx.imagelib.progress;
+package com.passon.imagelib.progress;
 
 import java.io.IOException;
 

@@ -1,4 +1,4 @@
-package com.lhjx.imagelib.progress;
+package com.passon.imagelib.progress;
 
 import android.text.TextUtils;
 
@@ -15,7 +15,6 @@ import okhttp3.ResponseBody;
  * Glide OkHttp 网络请求拦截器
  * Created by double on 2018/4/8.
  */
-
 public class ProgressInterceptor implements Interceptor {
 
     public static final Map<String, ProgressListener> LISTENER_MAP = new HashMap<>();
@@ -39,8 +38,6 @@ public class ProgressInterceptor implements Interceptor {
         }
         LISTENER_MAP.remove(url);
     }
-
-
 
     @Override
     public Response intercept(Chain chain) throws IOException {

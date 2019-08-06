@@ -1,4 +1,4 @@
-package com.lhjx.imagelib.progress;
+package com.passon.imagelib.progress;
 
 /**
  * Glide 加载图片 进度监听

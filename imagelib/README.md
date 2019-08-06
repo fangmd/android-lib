@@ -22,7 +22,7 @@
 # Glide 简单封装
 
 
->加载模式默认：fitXY
+>加载模式默认：fitXY, 需要配合 ImageView 属性 android:scaleType="fitXY" 使用
 
 图片缓存地址：
 

@@ -1,8 +1,8 @@
 ext {
-    PUBLISH_GROUP_ID = 'com.lhjx.imagelib'
+    PUBLISH_GROUP_ID = 'com.passon.imagelib'
     PUBLISH_ARTIFACT_ID = 'imagelib'
     // *版本号*
-    PUBLISH_VERSION = '1.0.4'
+    PUBLISH_VERSION = '1.0.5'
 }
 
 

@@ -1,4 +1,4 @@
-package com.lhjx.imagelib;
+package com.passon.imagelib;
 
 /**
  * 图片加载监听

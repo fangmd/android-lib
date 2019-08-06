@@ -1,4 +1,4 @@
-package com.lhjx.imagelib.utils;
+package com.passon.imagelib.utils;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
