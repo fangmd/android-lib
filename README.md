@@ -21,8 +21,12 @@ manifest merge fail 错误修复：
 
 日志库基于 Logger 库封装
 
-# 日志库 WebViewLib
+# 网页加载库 WebViewLib
 
 WebView + JSBridge
+
+# App 更新库 version_update
+
+APk 文件下载，并启动安装程序
 
 
