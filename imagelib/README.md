@@ -87,8 +87,6 @@ ImageManager.clearCache()
   **[] $VALUES;
   public *;
 }
-# If you're targeting any API level less than Android API 27, also include:
--dontwarn com.bumptech.glide.load.resource.bitmap.VideoDecoder
 
 # for DexGuard only
 -keepresourcexmlelements manifest/application/meta-data@value=GlideModule

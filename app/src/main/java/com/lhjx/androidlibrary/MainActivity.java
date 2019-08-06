@@ -6,6 +6,7 @@ import android.view.View;
 
 import com.lhjx.androidlibrary.imgload.ImageActivity;
 import com.lhjx.androidlibrary.logger.LoggerActivity;
+import com.lhjx.androidlibrary.versionUpdate.VersionUpdateActivity;
 import com.lhjx.androidlibrary.weblib.WebActivity;
 
 
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn_img).setOnClickListener(this);
         findViewById(R.id.btn_web).setOnClickListener(this);
         findViewById(R.id.btn_logger).setOnClickListener(this);
+        findViewById(R.id.btn_version_check).setOnClickListener(this);
 
 
     }
@@ -47,7 +49,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_logger:
                 LoggerActivity.start(this);
                 break;
-
+            case R.id.btn_version_check:
+                VersionUpdateActivity.start(this);
+                break;
         }
     }
 

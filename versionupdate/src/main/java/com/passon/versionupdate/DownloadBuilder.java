@@ -1,4 +1,4 @@
-package com.lhjx.versionupdate;
+package com.passon.versionupdate;
 
 import android.content.Context;
 

@@ -1,10 +1,11 @@
-package com.lhjx.versionupdate;
+package com.passon.versionupdate;
 
 import android.app.IntentService;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.ResultReceiver;
 import android.text.TextUtils;
+import android.util.Log;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -17,12 +18,15 @@ import java.net.URL;
  * download Service
  */
 public class DownloadService extends IntentService {
+    private static final String TAG = DownloadService.class.getSimpleName();
+
     public static boolean mStopDownload;
 
     public DownloadService() {
         super("DownloadService");
     }
 
+    @Override
     protected void onHandleIntent(Intent intent) {
         if (intent != null) {
             String downloadUrl = intent.getStringExtra(UpdateManager.DOWNLOAD_URL);
@@ -39,7 +43,7 @@ public class DownloadService extends IntentService {
                     conn.connect();
                     resultData.putInt("progress", 0);
                     if (receiver != null) {
-                        receiver.send(2, resultData);
+                        receiver.send(UpdateManager.DOWNLOAD_PROGRESS, resultData);
                     }
 
                     inputStream = conn.getInputStream();
@@ -54,9 +58,8 @@ public class DownloadService extends IntentService {
                         if (mStopDownload) {
                             mStopDownload = false;
                             if (receiver != null) {
-                                receiver.send(3, resultData);
+                                receiver.send(UpdateManager.DOWNLOAD_CANCEL, resultData);
                             }
-
                             return;
                         }
 
@@ -67,14 +70,14 @@ public class DownloadService extends IntentService {
                             progressUpdateTime = nowTime;
                             resultData.putInt("progress", (int) (progress * 100L / (long) totalSize));
                             if (receiver != null) {
-                                receiver.send(2, resultData);
+                                receiver.send(UpdateManager.DOWNLOAD_PROGRESS, resultData);
                             }
                         }
                     }
 
                     fos.flush();
                     if (receiver != null) {
-                        receiver.send(4, resultData);
+                        receiver.send(UpdateManager.DOWNLOAD_SUCCESS, resultData);
                     }
 
                     if (!mStopDownload) {
@@ -83,7 +86,7 @@ public class DownloadService extends IntentService {
 
                     mStopDownload = false;
                     if (receiver != null) {
-                        receiver.send(3, resultData);
+                        receiver.send(UpdateManager.DOWNLOAD_CANCEL, resultData);
                     }
                 } catch (IOException var44) {
                     var44.printStackTrace();
@@ -91,7 +94,6 @@ public class DownloadService extends IntentService {
                     if (receiver != null) {
                         receiver.send(1, resultData);
                     }
-
                     return;
                 } catch (Exception var45) {
                     var45.printStackTrace();
@@ -99,7 +101,6 @@ public class DownloadService extends IntentService {
                     if (receiver != null) {
                         receiver.send(1, resultData);
                     }
-
                     return;
                 } finally {
                     try {
@@ -107,7 +108,7 @@ public class DownloadService extends IntentService {
                             inputStream.close();
                         }
                     } catch (IOException var43) {
-
+                        Log.e(TAG, "onHandleIntent: ", var43);
                     }
 
                     try {
@@ -115,7 +116,7 @@ public class DownloadService extends IntentService {
                             fos.close();
                         }
                     } catch (Exception var42) {
-
+                        Log.e(TAG, "onHandleIntent: ", var42);
                     }
 
                     try {
@@ -123,17 +124,15 @@ public class DownloadService extends IntentService {
                             conn.disconnect();
                         }
                     } catch (Exception var41) {
-
+                        Log.e(TAG, "onHandleIntent: ", var41);
                     }
-
                 }
 
             } else {
                 if (receiver != null) {
                     resultData.putString("error", "下载初始化失败");
-                    receiver.send(1, resultData);
+                    receiver.send(UpdateManager.DOWNLOAD_ERROR, resultData);
                 }
-
             }
         }
     }

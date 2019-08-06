@@ -1,4 +1,4 @@
-package com.lhjx.versionupdate;
+package com.passon.versionupdate;
 
 /**
  * Author: Created by fangmingdong on 2019/3/27-4:06 PM

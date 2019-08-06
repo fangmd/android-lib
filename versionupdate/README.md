@@ -1,6 +1,8 @@
 
 # 更新库
 
+实际上是一个下载库，并自动启动安装 apk 流程
+
 ## 例子
 
 ```java
@@ -45,3 +47,5 @@
                     }
                 }).build();
 ```
+
+下载后文件位置：`Android/data/<package name>/cache/<setDownloadFileName>/update/<setDownloadFileName>`

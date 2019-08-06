@@ -50,5 +50,8 @@ dependencies {
     implementation project(':imagelib')
     implementation project(':webviewlib')
     implementation project(':loglib')
+    implementation project(':versionupdate')
+
+
     //    implementation project(":testdialog")
 }

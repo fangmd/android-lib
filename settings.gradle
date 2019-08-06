@@ -9,8 +9,8 @@ include ':app',
 //        ':pushlib',
 //        ':matisse',
         ':imagelib',
-        ':webviewlib'
-//        ':versionupdate'
+        ':webviewlib',
+        ':versionupdate'
 //        ':encryptionlib',
 //        'address_selector'
 

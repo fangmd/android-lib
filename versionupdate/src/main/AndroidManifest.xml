@@ -5,16 +5,15 @@
     <!--compat android 8.0-->
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
 
-
     <application>
         <service
-            android:name="com.lhjx.versionupdate.DownloadService"
+            android:name="com.passon.versionupdate.DownloadService"
             android:exported="false">
         </service>
 
         <provider
-            android:name="com.lhjx.versionupdate.UpdateFileProvider"
-            android:authorities="com.lhjx.versionupdate.versionProvider"
+            android:name="com.passon.versionupdate.UpdateFileProvider"
+            android:authorities="com.passon.versionupdate.versionProvider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
