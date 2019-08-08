@@ -1,0 +1,7 @@
+ext {
+    PUBLISH_GROUP_ID = 'com.passon.commonutils'
+    PUBLISH_ARTIFACT_ID = 'commonutils'
+    PUBLISH_VERSION = '0.0.2'
+}
+
+

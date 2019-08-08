@@ -22,6 +22,9 @@ buildscript {
 
 allprojects {
     repositories {
+        maven {
+            url "https://dl.bintray.com/fangmingdong0224/passon"
+        }
         google()
         jcenter()
         mavenCentral()

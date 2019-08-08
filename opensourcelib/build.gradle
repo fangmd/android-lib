@@ -47,42 +47,15 @@ dependencies {
         exclude module: 'rxjava'
         exclude module: 'support-annotations'
     }
-    api('com.trello.rxlifecycle2:rxlifecycle:2.2.1') {
-        exclude module: 'rxjava'
-        exclude module: 'jsr305'
-    }
-    api('com.trello.rxlifecycle2:rxlifecycle-components:2.2.1') {
-        exclude module: 'support-v4'
-        exclude module: 'appcompat-v7'
-        exclude module: 'support-annotations'
-        exclude module: 'rxjava'
-        exclude module: 'rxandroid'
-        exclude module: 'rxlifecycle'
-    }
+
     //net
-    api('com.squareup.retrofit2:retrofit:2.4.0') {
-        exclude module: 'okhttp'
-        exclude module: 'okio'
-    }
-    api('com.squareup.retrofit2:converter-gson:2.3.0') {
-        exclude module: 'gson'
-        exclude module: 'retrofit'
-        exclude module: 'okhttp'
-        exclude module: 'okio'
-    }
-    api('com.squareup.retrofit2:adapter-rxjava2:2.3.0') {
-        exclude module: 'rxjava'
-        exclude module: 'okhttp'
-        exclude module: 'retrofit'
-        exclude module: 'okio'
-    }
-    api('com.squareup.okhttp3:logging-interceptor:3.9.0') {
-        exclude module: 'okhttp'
-    }
+    api 'com.squareup.retrofit2:retrofit:2.4.0'
+    api 'com.squareup.retrofit2:converter-gson:2.3.0'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    api 'com.squareup.okhttp3:logging-interceptor:3.9.0'
     api 'com.squareup.okhttp3:okhttp:3.10.0'
     api 'com.google.code.gson:gson:2.8.4'
-    // logger
-    api 'com.orhanobut:logger:2.2.0'
+
     //refresh
     api 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.5.1'
     api 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.5.1'

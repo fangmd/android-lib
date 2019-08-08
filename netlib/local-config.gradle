@@ -1,0 +1,7 @@
+ext {
+    PUBLISH_GROUP_ID = 'com.passon.netlib'
+    PUBLISH_ARTIFACT_ID = 'netlib'
+    PUBLISH_VERSION = '0.0.3'
+}
+
+
