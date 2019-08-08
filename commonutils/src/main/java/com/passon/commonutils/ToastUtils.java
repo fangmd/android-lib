@@ -6,7 +6,7 @@ import android.widget.Toast;
 
 
 /**
- * Created by yabusai on 15/2/4.
+ * Created by double on 15/2/4.
  */
 public class ToastUtils {
 
@@ -64,11 +64,11 @@ public class ToastUtils {
     }
 
     public static void shortShow(CharSequence text) {
-        show(CommonUtils.app, text, Toast.LENGTH_SHORT);
+        show(CommonUtils.getApp(), text, Toast.LENGTH_SHORT);
     }
 
     public static void longShow(CharSequence text) {
-        show(CommonUtils.app, text, Toast.LENGTH_LONG);
+        show(CommonUtils.getApp(), text, Toast.LENGTH_LONG);
     }
 
 }

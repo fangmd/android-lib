@@ -2,10 +2,10 @@
 <paths xmlns:android="http://schemas.android.com/apk/res/android">
 
     <external-cache-path
-        name="cache_update_version"
+        name="external_cache_path"
         path="."/>
     <external-path
-        name="update_version"
+        name="external_path"
         path="."/>
 
 </paths>

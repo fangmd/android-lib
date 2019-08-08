@@ -8,9 +8,14 @@ import android.app.Application;
  */
 public class CommonUtils {
 
-    public static Application app;
+    private static Application app;
 
     public static void init(Application app) {
         CommonUtils.app = app;
     }
+
+    public static Application getApp() {
+        return app;
+    }
+
 }

@@ -23,7 +23,7 @@ public class NetUtils {
      * @return boolean
      */
     public static boolean isNetworkConnected() {
-        final ConnectivityManager cm = (ConnectivityManager) CommonUtils.app.getSystemService(Context.CONNECTIVITY_SERVICE);
+        final ConnectivityManager cm = (ConnectivityManager) CommonUtils.getApp().getSystemService(Context.CONNECTIVITY_SERVICE);
         if (cm != null) {
             if (Build.VERSION.SDK_INT < 23) {
                 final NetworkInfo ni = cm.getActiveNetworkInfo();
